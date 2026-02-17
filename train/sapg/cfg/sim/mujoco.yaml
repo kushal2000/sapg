@@ -1,0 +1,14 @@
+# MuJoCo simulator parameters.
+# Runs N independent MjData instances on CPU.
+
+sim:
+  dt: 0.001  # 1000 Hz physics, decimated to control freq
+  num_envs: 64  # CPU-limited — typically 64-256 envs
+  mjcf_path: null  # null = use default IIWA+Sharpa scene
+
+  # MuJoCo solver settings (set on MjModel.opt)
+  integrator: implicitfast
+  cone: elliptic
+  noslip_iterations: 20
+  ls_iterations: 50
+  condim: 6

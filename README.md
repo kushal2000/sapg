@@ -97,7 +97,7 @@ pip install -e .
 
 Either use our training script:
 ```
-bash train_scripts/pretrain.sh
+bash train/train_scripts/pretrain.sh
 ```
 
 Or use the following command:
@@ -137,7 +137,7 @@ task.env.object_type='cuboid'
 
 Either use our training script:
 ```
-bash train_scripts/finetune.sh
+bash train/train_scripts/finetune.sh
 ```
 
 Or use the following command:
@@ -180,7 +180,7 @@ task.env.use_fixed_init_object_pose=False
 
 Either use our training script:
 ```
-bash train_scripts/play.sh
+bash train/train_scripts/play.sh
 ```
 
 Or use the following command:
@@ -282,19 +282,19 @@ Convention: `env` refers to a wrapper around simulator that has a `step` method 
 Standard Mujoco simulation:
 
 ```
-python sim2sim/mujoco_sim/mujoco_sim.py
+python eval/sim2sim/mujoco_sim/mujoco_sim.py
 ```
 
 Mujoco environment with no ROS:
 
 ```
-python sim2sim/mujoco_sim/mujoco_env_no_ros.py
+python eval/sim2sim/mujoco_sim/mujoco_env_no_ros.py
 ```
 
 Mujoco environment with ROS:
 
 ```
-python sim2sim/mujoco_sim/mujoco_env_ros.py
+python eval/sim2sim/mujoco_sim/mujoco_env_ros.py
 ```
 
 ## Isaac
@@ -304,25 +304,25 @@ For Isaac, we can either have the env step with raw actions in `[-1, 1]` or with
 Standard Isaac environment:
 
 ```
-python sim2sim/isaac_sim/isaac_env.py
+python eval/sim2sim/isaac_sim/isaac_env.py
 ```
 
 Isaac environment with no ROS:
 
 ```
-python sim2sim/isaac_sim/isaac_env_no_ros.py
+python eval/sim2sim/isaac_sim/isaac_env_no_ros.py
 ```
 
 Isaac environment with no ROS and joint position targets:
 
 ```
-python sim2sim/isaac_sim/isaac_env_no_ros_joint_pos_targets.py
+python eval/sim2sim/isaac_sim/isaac_env_no_ros_joint_pos_targets.py
 ```
 
 As of right now, we have not implemented the following because isaacgym requires Python 3.8 and robostack requires Python 3.10+ (can do this if use system-level ROS):
 
 ```
-python sim2sim/isaac_sim/isaac_env_ros_joint_pos_targets.py
+python eval/sim2sim/isaac_sim/isaac_env_ros_joint_pos_targets.py
 ```
 
 
@@ -339,37 +339,37 @@ For Sim2Real policy deployment, we will require at least 3 nodes:
 The RL Policy Node is in this repo:
 
 ```
-python sim2real/rl_policy_ros_node.py
+python eval/sim2real/rl_policy_ros_node.py
 ```
 
 Home robot:
 
 ```
-python sim2real/home_robot.py
+python eval/sim2real/home_robot.py
 ```
 
 Open-loop replay of joint position trajectory:
 
 ```
-python sim2real/replay_trajectory.py
+python eval/sim2real/replay_trajectory.py
 ```
 
 Visualizer node:
 
 ```
-python sim2real/visualizer.py
+python eval/sim2real/visualizer.py
 ```
 
 If want to try without a real robot, you can either use mujoco sim2sim (will publish object pose and goal object pose):
 
 ```
-python sim2sim/mujoco_sim/mujoco_env_ros.py
+python eval/sim2sim/mujoco_sim/mujoco_env_ros.py
 ```
 
 Or fake_robot_ros_node.py (no physics, just interpolating to joint position targets):
 
 ```
-python sim2real/fake_robot_ros_node.py
+python eval/sim2real/fake_robot_ros_node.py
 ```
 
 Move hand to "limp" position:

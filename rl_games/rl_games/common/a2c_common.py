@@ -108,7 +108,7 @@ class A2CBase(BaseAlgorithm):
             import hashlib
             dist.init_process_group("gloo", rank=self.global_rank, world_size=self.world_size, init_method=f'tcp://127.0.0.1:{23400 + int(hashlib.md5(self.experiment_name[3:].encode("utf-8")).hexdigest(), 16) % 500}')
 
-            self.device_name = 'cuda:0' # DEBUG
+            self.device_name = 'cuda:0'
             config['device'] = self.device_name
             if self.global_rank != 0:
                 config['print_stats'] = False
@@ -1224,7 +1224,7 @@ class DiscreteA2CBase(A2CBase):
             self.obs = self.obs_to_tensors(self.obs)
 
         if self.multi_gpu:
-            torch.cuda.set_device(self.local_rank)
+            torch.cuda.set_device(0)
             print("====================broadcasting parameters")
             model_params = [self.model.state_dict()]
             dist.broadcast_object_list(model_params, 0)

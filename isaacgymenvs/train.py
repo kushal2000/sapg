@@ -31,6 +31,14 @@
 
 import os
 import sys
+
+# Multi-GPU: pin each process to its own GPU via CUDA_VISIBLE_DEVICES
+# before any CUDA initialization. torchrun sets LOCAL_RANK per process.
+# This makes cuda:0 in each process map to a different physical GPU.
+_local_rank = os.getenv("LOCAL_RANK")
+if _local_rank is not None:
+    os.environ["CUDA_VISIBLE_DEVICES"] = _local_rank
+
 import hydra
 import yaml
 from isaacgymenvs.utils.reformat import omegaconf_to_dict

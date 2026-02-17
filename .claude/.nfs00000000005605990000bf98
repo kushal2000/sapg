@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(conda run:*)",
+      "Bash(conda install:*)",
+      "Bash(LD_LIBRARY_PATH=/juno/u/satvik/miniconda3/envs/sapg/lib:$LD_LIBRARY_PATH conda run -n sapg timeout 120 python:*)",
+      "Bash(python:*)",
+      "Bash(timeout 120 bash:*)",
+      "Bash(source:*)",
+      "Bash(conda activate:*)",
+      "Bash(pip install:*)",
+      "Bash(timeout 180 bash:*)",
+      "Bash(tee:*)",
+      "Bash(grep:*)",
+      "Bash(/juno/u/satvik/miniconda3/envs/mochi_gym/bin/python:*)",
+      "Bash(MOCHI_ASSETS_PATH=/juno/u/satvik/mochi/assets /juno/u/satvik/miniconda3/envs/mochi_gym/bin/python:*)"
+    ]
+  }
+}

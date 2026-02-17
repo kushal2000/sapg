@@ -104,7 +104,16 @@ class Env(ABC):
         self.num_observations = config["env"].get("numObservations", 0)
         self.num_states = config["env"].get("numStates", 0)
 
-        self.obs_space = spaces.Box(np.ones(self.num_obs) * -np.Inf, np.ones(self.num_obs) * np.Inf)
+        # Check if we have image observations (set by AllegroKukaBase before super().__init__)
+        has_image = getattr(self, 'has_image_obs', False) and self.has_image_obs
+        if has_image:
+            depth_size = config["env"].get("depthImageSize", 224)
+            self.obs_space = spaces.Dict({
+                "proprio": spaces.Box(np.ones(self.num_obs) * -np.Inf, np.ones(self.num_obs) * np.Inf),
+                "depth_image": spaces.Box(low=0.0, high=10.0, shape=(1, depth_size, depth_size), dtype=np.float32),
+            })
+        else:
+            self.obs_space = spaces.Box(np.ones(self.num_obs) * -np.Inf, np.ones(self.num_obs) * np.Inf)
         self.state_space = spaces.Box(np.ones(self.num_states) * -np.Inf, np.ones(self.num_states) * np.Inf)
 
         self.num_actions = config["env"]["numActions"]
@@ -417,7 +426,16 @@ class VecTask(Env):
 
         self.extras["time_outs"] = self.timeout_buf.to(self.rl_device)
 
-        self.obs_dict["obs"] = torch.clamp(self.obs_buf, -self.clip_obs, self.clip_obs).to(self.rl_device)
+        flat_obs = torch.clamp(self.obs_buf, -self.clip_obs, self.clip_obs).to(self.rl_device)
+
+        # When image observations are present, output dict obs
+        if getattr(self, 'has_image_obs', False) and self.has_image_obs:
+            obs_out = {"proprio": flat_obs}
+            if hasattr(self, 'depth_obs'):
+                obs_out["depth_image"] = self.depth_obs.to(self.rl_device)
+            self.obs_dict["obs"] = obs_out
+        else:
+            self.obs_dict["obs"] = flat_obs
 
         # asymmetric actor-critic
         if self.num_states > 0:
@@ -447,7 +465,15 @@ class VecTask(Env):
         Returns:
             Observation dictionary
         """
-        self.obs_dict["obs"] = torch.clamp(self.obs_buf, -self.clip_obs, self.clip_obs).to(self.rl_device)
+        flat_obs = torch.clamp(self.obs_buf, -self.clip_obs, self.clip_obs).to(self.rl_device)
+
+        if getattr(self, 'has_image_obs', False) and self.has_image_obs:
+            obs_out = {"proprio": flat_obs}
+            if hasattr(self, 'depth_obs'):
+                obs_out["depth_image"] = self.depth_obs.to(self.rl_device)
+            self.obs_dict["obs"] = obs_out
+        else:
+            self.obs_dict["obs"] = flat_obs
 
         # asymmetric actor-critic
         if self.num_states > 0:
@@ -464,7 +490,15 @@ class VecTask(Env):
         if len(done_env_ids) > 0:
             self.reset_idx(done_env_ids)
 
-        self.obs_dict["obs"] = torch.clamp(self.obs_buf, -self.clip_obs, self.clip_obs).to(self.rl_device)
+        flat_obs = torch.clamp(self.obs_buf, -self.clip_obs, self.clip_obs).to(self.rl_device)
+
+        if getattr(self, 'has_image_obs', False) and self.has_image_obs:
+            obs_out = {"proprio": flat_obs}
+            if hasattr(self, 'depth_obs'):
+                obs_out["depth_image"] = self.depth_obs.to(self.rl_device)
+            self.obs_dict["obs"] = obs_out
+        else:
+            self.obs_dict["obs"] = flat_obs
 
         # asymmetric actor-critic
         if self.num_states > 0:

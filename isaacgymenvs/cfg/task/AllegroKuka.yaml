@@ -210,6 +210,14 @@ env:
 
   handleHeadTypes: ["hammer", "screwdriver", "marker", "spatula", "eraser", "brush"]
 
+  # Depth observation settings
+  useDepthObservation: False
+  depthImageSize: 224
+  depthCameraMount: fixed  # "fixed" or "wrist"
+  depthCameraPos: [0.5, 0.0, 0.8]
+  depthCameraTarget: [0.0, 0.0, 0.5]
+  depthCameraWristBody: "iiwa14_link_7"  # rigid body name for wrist mount
+
   # asset Friction settings
   modifyAssetFrictions: True
   robotFriction: 0.5

@@ -258,26 +258,37 @@ class AllegroKukaBase(VecTask):
             "reward": 1,
         }
 
+        # Image observation types are handled separately from flat observations
+        self.image_obs_types = {"depth_image"}
+
         self.state_list = self.cfg["env"]["stateList"]
         self.obs_list = self.cfg["env"]["obsList"]
 
-        # assert that all obs in state_list and obs_list are keys of self.obs_type_size_dict
-        for obs_type in self.state_list + self.obs_list:
+        # Split obs lists into flat and image components
+        self.flat_obs_list = [k for k in self.obs_list if k not in self.image_obs_types]
+        self.image_obs_list = [k for k in self.obs_list if k in self.image_obs_types]
+        self.has_image_obs = len(self.image_obs_list) > 0
+
+        # assert that all flat obs in state_list and obs_list are keys of self.obs_type_size_dict
+        for obs_type in self.state_list:
+            assert obs_type in self.obs_type_size_dict, f"Obs type {obs_type} not found in obs_type_size_dict"
+        for obs_type in self.flat_obs_list:
             assert obs_type in self.obs_type_size_dict, f"Obs type {obs_type} not found in obs_type_size_dict"
 
-        # assert that all obs in obs_list are also in state_list
-        for obs_type in self.obs_list:
+        # assert that all flat obs in obs_list are also in state_list
+        for obs_type in self.flat_obs_list:
             assert obs_type in self.state_list, f"Obs type {obs_type} not found in state_list but is in obs_list"
 
         self.full_state_size = sum([self.obs_type_size_dict[obs_type] for obs_type in self.state_list])
-        self.full_obs_size = sum([self.obs_type_size_dict[obs_type] for obs_type in self.obs_list])
+        self.flat_obs_size = sum([self.obs_type_size_dict[obs_type] for obs_type in self.flat_obs_list])
 
         self.up_axis = "z"
 
         self.fingertip_obs = True
 
         self.cfg["env"]["numStates"] = self.full_state_size
-        self.cfg["env"]["numObservations"] = self.full_obs_size
+        # numObservations is the flat proprioceptive obs size (image obs handled separately via dict)
+        self.cfg["env"]["numObservations"] = self.flat_obs_size
         self.cfg["env"]["numActions"] = self.num_allegro_kuka_actions
 
         self.cfg["device_type"] = sim_device.split(":")[0] if sim_device.find(":") != -1 else sim_device
@@ -304,6 +315,11 @@ class AllegroKukaBase(VecTask):
         # Init camera for wandb logging
         self._initialize_camera_sensor(cam_pos=cam_pos, cam_target=cam_target)
         self._modify_render_settings_if_headless()
+
+        # Init depth cameras for observations (if enabled)
+        self.use_depth_observation = self.cfg["env"].get("useDepthObservation", False)
+        if self.use_depth_observation:
+            self._initialize_depth_cameras()
 
         # volume to sample target position from
         target_volume_origin = np.array([0, 0.05, 0.8], dtype=np.float32)
@@ -2368,7 +2384,11 @@ class AllegroKukaBase(VecTask):
         # ##############################################################################################################
         # Create obs_buf
         # ##############################################################################################################
-        self.obs_buf = torch.cat([obs_dict[k].reshape(self.num_envs, -1) for k in self.obs_list], dim=-1)
+        self.obs_buf = torch.cat([obs_dict[k].reshape(self.num_envs, -1) for k in self.flat_obs_list], dim=-1)
+
+        # Capture depth images if depth observation is enabled
+        if self.has_image_obs and "depth_image" in self.image_obs_list:
+            self.depth_obs = self._get_depth_observations()
 
         # Update obs queue
         self.obs_queue = self.update_queue(queue=self.obs_queue, current_values=self.obs_buf)
@@ -3131,7 +3151,7 @@ class AllegroKukaBase(VecTask):
             print("No rewards_episode or episode_cumulative found in extras")
 
     def _record_data(self):
-        from recorded_data_scripts.recorded_data import RecordedData
+        from misc.recorded_data_scripts.recorded_data import RecordedData
         N_TIMESTEPS = self.cfg["env"]["record_data_num_steps"]
 
         # Get data from sim
@@ -3539,6 +3559,70 @@ class AllegroKukaBase(VecTask):
         self.gym.set_camera_location(
             self.camera_handle, self.envs[self.index_to_view], cam_pos, cam_target
         )
+
+    def _initialize_depth_cameras(self) -> None:
+        """Create depth cameras for ALL environments for use as observations."""
+        depth_cfg = self.cfg["env"]
+        img_size = depth_cfg.get("depthImageSize", 224)
+        mount_type = depth_cfg.get("depthCameraMount", "fixed")
+
+        cam_props = gymapi.CameraProperties()
+        cam_props.width = img_size
+        cam_props.height = img_size
+        cam_props.enable_tensors = True
+
+        self.depth_camera_handles = []
+        for i, env in enumerate(self.envs):
+            cam_handle = self.gym.create_camera_sensor(env, cam_props)
+
+            if mount_type == "fixed":
+                pos = depth_cfg.get("depthCameraPos", [0.5, 0.0, 0.8])
+                target = depth_cfg.get("depthCameraTarget", [0.0, 0.0, 0.5])
+                self.gym.set_camera_location(
+                    cam_handle, env,
+                    gymapi.Vec3(*pos), gymapi.Vec3(*target),
+                )
+            elif mount_type == "wrist":
+                wrist_body_name = depth_cfg.get("depthCameraWristBody", "iiwa14_link_7")
+                actor_handle = self.gym.get_actor_handle(env, 0)
+                body_handle = self.gym.find_actor_rigid_body_handle(env, actor_handle, wrist_body_name)
+                local_transform = gymapi.Transform()
+                local_transform.p = gymapi.Vec3(0.05, 0.0, 0.0)
+                self.gym.attach_camera_to_body(
+                    cam_handle, env, body_handle, local_transform, gymapi.FOLLOW_TRANSFORM,
+                )
+            else:
+                raise ValueError(f"Unknown depth camera mount type: {mount_type}")
+
+            self.depth_camera_handles.append(cam_handle)
+
+        self.depth_image_size = img_size
+        # Pre-allocate depth image buffer
+        self.depth_image_buf = torch.zeros(
+            (self.num_envs, 1, img_size, img_size), device=self.device, dtype=torch.float32
+        )
+        print(f"Initialized {len(self.depth_camera_handles)} depth cameras ({mount_type} mount, {img_size}x{img_size})")
+
+    def _get_depth_observations(self) -> torch.Tensor:
+        """Render and return depth images from all environments.
+
+        Returns:
+            Tensor of shape (num_envs, 1, H, W) with depth values.
+        """
+        self.gym.render_all_camera_sensors(self.sim)
+        self.gym.start_access_image_tensors(self.sim)
+
+        for i, env in enumerate(self.envs):
+            depth_tensor = self.gym.get_camera_image_gpu_tensor(
+                self.sim, env, self.depth_camera_handles[i], gymapi.IMAGE_DEPTH,
+            )
+            torch_depth = gymtorch.wrap_tensor(depth_tensor)
+            # torch_depth shape: (H, W), values are negative distances
+            # Negate so closer objects have smaller values, clamp to reasonable range
+            self.depth_image_buf[i, 0] = -torch_depth.clamp(-10.0, 0.0)
+
+        self.gym.end_access_image_tensors(self.sim)
+        return self.depth_image_buf
 
     def _modify_render_settings_if_headless(self) -> None:
         # If not headless, leave things as they are

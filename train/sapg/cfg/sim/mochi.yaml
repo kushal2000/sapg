@@ -1,0 +1,19 @@
+# Mochi simulator parameters.
+# CPU multiprocess via HybridVectorEnv (async workers × sync envs/worker).
+
+sim:
+  control_frequency: 20     # Hz — policy update rate
+  simulation_frequency: 100  # Hz — physics rate (must be multiple of control)
+  num_envs: 256
+  num_workers: 8
+  num_envs_per_worker: 32
+
+  # Path to mochi_gym package (if not installed)
+  mochi_gym_path: /juno/u/satvik/mochi/mochi_gym
+
+  # Path to mochi assets (prefabs, meshes).
+  # Also settable via MOCHI_ASSETS_PATH env var.
+  mochi_assets_path: /juno/u/satvik/mochi/assets
+
+  # Scene sharing reduces memory when many envs share the same scene
+  use_shared_scenes: true
