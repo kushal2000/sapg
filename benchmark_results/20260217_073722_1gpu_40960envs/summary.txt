@@ -1,0 +1,10 @@
+Config: 40960 envs, 1 GPU
+----------------------------------------
+  fps step:  mean=178,140
+  fps total: mean=108,274
+  Play time:   mean=4.205s
+  Update time: mean=1.855s
+  Total time:  mean=6.060s
+  GPU 0 SM util: mean=38.6%, median=45.0%
+  GPU 1 SM util: mean=0.0%, median=0.0%
+  Measured epochs: 12

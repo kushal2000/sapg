@@ -1,0 +1,1899 @@
+WARNING:__main__:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/hydra/_internal/hydra.py:119: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/hydra/_internal/hydra.py:119: UserWarning: Future Hydra versions will no longer change working directory at job runtime by default.
+See https://hydra.cc/docs/1.2/upgrades/1.1_to_1.2/changes_to_job_working_dir/ for more information.
+  ret = run_job(
+Importing module 'gym_38' (/juno/u/satvik/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Importing module 'gym_38' (/juno/u/satvik/isaacgym/python/isaacgym/_bindings/linux-x86_64/gym_38.so)
+Setting GYM_USD_PLUG_INFO_PATH to /juno/u/satvik/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+Setting GYM_USD_PLUG_INFO_PATH to /juno/u/satvik/isaacgym/python/isaacgym/_bindings/linux-x86_64/usd/plugInfo.json
+PyTorch version 2.4.1+cu121
+Device count 1
+/juno/u/satvik/isaacgym/python/isaacgym/_bindings/src/gymtorch
+Using /sailhome/satvik/.cache/torch_extensions/py38_cu121 as PyTorch extensions root...
+PyTorch version 2.4.1+cu121
+Emitting ninja build file /sailhome/satvik/.cache/torch_extensions/py38_cu121/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module gymtorch...
+Device count 1
+/juno/u/satvik/isaacgym/python/isaacgym/_bindings/src/gymtorch
+Using /sailhome/satvik/.cache/torch_extensions/py38_cu121 as PyTorch extensions root...
+Emitting ninja build file /sailhome/satvik/.cache/torch_extensions/py38_cu121/gymtorch/build.ninja...
+Building extension module gymtorch...
+Allowing ninja to set a default number of workers... (overridable by setting the environment variable MAX_JOBS=N)
+ninja: no work to do.
+Loading extension module gymtorch...
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+2026-02-16 18:21:05,193 - INFO - logger - logger initialized
+<unknown>:3: DeprecationWarning: invalid escape sequence \*
+2026-02-16 18:21:05,223 - INFO - logger - logger initialized
+Error: FBX library failed to load - importing FBX data will not succeed. Message: No module named 'fbx'
+FBX tools must be installed from https://help.autodesk.com/view/FBX/2020/ENU/?guid=FBX_Developer_Help_scripting_with_python_fbx_installing_python_fbx_html
+<unknown>:3: DeprecationWarning: invalid escape sequence \*
+Error: FBX library failed to load - importing FBX data will not succeed. Message: No module named 'fbx'
+FBX tools must be installed from https://help.autodesk.com/view/FBX/2020/ENU/?guid=FBX_Developer_Help_scripting_with_python_fbx_installing_python_fbx_html
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/networkx/classes/graph.py:23: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/networkx/classes/graph.py:23: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/networkx/classes/reportviews.py:95: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, Set, Iterable
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/networkx/classes/reportviews.py:95: DeprecationWarning: Using or importing the ABCs from 'collections' instead of from 'collections.abc' is deprecated since Python 3.3, and in 3.10 it will stop working
+  from collections import Mapping, Set, Iterable
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/networkx/readwrite/graphml.py:346: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  (np.int, "int"), (np.int8, "int"),
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/networkx/readwrite/graphml.py:346: DeprecationWarning: `np.int` is a deprecated alias for the builtin `int`. To silence this warning, use `int` by itself. Doing this will not modify any behavior and is safe. When replacing `np.int`, you may wish to use e.g. `np.int64` or `np.int32` to specify the precision. If you wish to review your current use, check the release note link for additional information.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  (np.int, "int"), (np.int8, "int"),
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/networkx/drawing/nx_pydot.py:27: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import parse_version
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/networkx/drawing/nx_pydot.py:27: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
+  from pkg_resources import parse_version
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('mpl_toolkits')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/pkg_resources/__init__.py:3154: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
+Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
+  declare_namespace(pkg)
+/juno/u/satvik/isaacgym/python/isaacgym/torch_utils.py:135: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  def get_axis_params(value, axis_idx, x_value=0., dtype=np.float, n_dims=3):
+/juno/u/satvik/isaacgym/python/isaacgym/torch_utils.py:135: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  def get_axis_params(value, axis_idx, x_value=0., dtype=np.float, n_dims=3):
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/wandb/util.py:116: SentryHubDeprecationWarning: `sentry_sdk.Hub` is deprecated and will be removed in a future major release. Please consult our 1.x to 2.x migration guide for details on how to migrate `Hub` usage to the new API: https://docs.sentry.io/platforms/python/migration/1.x-to-2.x
+  sentry_hub = sentry_sdk.Hub(sentry_client)
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/wandb/util.py:116: SentryHubDeprecationWarning: `sentry_sdk.Hub` is deprecated and will be removed in a future major release. Please consult our 1.x to 2.x migration guide for details on how to migrate `Hub` usage to the new API: https://docs.sentry.io/platforms/python/migration/1.x-to-2.x
+  sentry_hub = sentry_sdk.Hub(sentry_client)
+task: 
+    name: AllegroKuka
+    physics_engine: physx
+    env: 
+        subtask: reorientation
+        numEnvs: 24576
+task        : envSpacing
+:     name: 1.2AllegroKuka
+
+            physics_engineepisodeLength: : physx600
+
+            env: enableCameraSensors: 
+True        
+subtask        : reorientationenableDebugVis
+:         FalsenumEnvs
+:         24576
+evalStats        : envSpacingFalse: 
+        1.2clampAbsObservations
+:         episodeLength10.0: 
+600        
+        stiffnessScaleenableCameraSensors: : 1.0True
+
+                enableDebugVisforceLimitScale: : False
+1.0        
+evalStats        : FalseuseRelativeControl
+:         FalseclampAbsObservations
+:         10.0
+dofSpeedScale        : stiffnessScale: 1.51.0
+
+                forceLimitScalehandMovingAverage: : 1.0
+0.1        
+useRelativeControl        : FalsearmMovingAverage
+:         0.1dofSpeedScale: 
+1.5        
+        dofSpeedScaleFinal: handMovingAverage: None
+0.1
+                armMovingAverageFinalarmMovingAverage: : None0.1
+
+                dofSpeedScaleFinalhandMovingAverageFinal: : NoneNone
+
+                armMovingAverageFinal: controlFrequencyInvNone: 
+        1
+handMovingAverageFinal:         None
+resetPositionNoiseX        : controlFrequencyInv0.1: 
+1
+                resetPositionNoiseYresetPositionNoiseX: : 0.10.1
+
+                resetPositionNoiseYresetPositionNoiseZ: : 0.1
+0.02        
+        resetPositionNoiseZ: randomizeObjectRotation0.02: 
+True        
+randomizeObjectRotation        : TrueresetDofPosRandomIntervalFingers
+:         0.1resetDofPosRandomIntervalFingers
+: 0.1        
+        resetDofPosRandomIntervalArm: resetDofPosRandomIntervalArm: 0.10.1
+
+                resetDofVelRandomIntervalresetDofVelRandomInterval: : 0.50.5
+
+                tableResetZ: tableResetZ0.38: 
+0.38        
+tableResetZRange        : 0.025tableResetZRange
+:         0.025tableObjectZOffset
+:         0.25
+tableObjectZOffset        : forceScale: 0.25
+2.0
+                forceScaleforceProbRange: : 2.0
+        forceProbRange: [0.001, 0.1]
+        forceDecay: 0.99
+        [0.001, 0.1]forceDecayInterval
+: 0.08        
+        forceDecay: forceOnlyWhenLifted: 0.99True
+
+                torqueScaleforceDecayInterval: : 0.0
+0.08        
+torqueProbRange        : forceOnlyWhenLifted: True
+[0.001, 0.1]        
+        torqueScale: torqueDecay: 0.00.99
+
+                torqueDecayIntervaltorqueProbRange: : 0.08
+        torqueOnlyWhenLifted: True[0.001, 0.1]
+
+                linVelImpulseProbRange: torqueDecay: 0.99[0.001, 0.1]
+
+                torqueDecayIntervallinVelImpulseScale: : 0.080.0
+
+                linVelImpulseOnlyWhenLiftedtorqueOnlyWhenLifted: : True
+True        
+        angVelImpulseProbRange: linVelImpulseProbRange: [0.001, 0.1]
+        [0.001, 0.1]angVelImpulseScale
+:         0.0
+linVelImpulseScale        : angVelImpulseOnlyWhenLifted: 0.0True
+
+                liftingRewScalelinVelImpulseOnlyWhenLifted: : 20.0True
+
+                liftingBonus: angVelImpulseProbRange300.0: 
+        liftingBonusThreshold: 0.15
+[0.001, 0.1]        
+        keypointRewScale: angVelImpulseScale200.0: 
+0.0        
+distanceDeltaRewScale        : 50.0angVelImpulseOnlyWhenLifted
+:         TruereachGoalBonus
+:         1000.0
+liftingRewScale        : kukaActionsPenaltyScale20.0: 
+0.03        
+        liftingBonus: allegroActionsPenaltyScale: 300.00.003
+
+                liftingBonusThresholdfallDistance: : 0.240.15
+
+                fallPenalty: keypointRewScale0.0: 
+        200.0
+objectLinVelPenaltyScale:         0.0
+distanceDeltaRewScale        : objectAngVelPenaltyScale50.0: 
+0.0        
+        reachGoalBonus: privilegedActions: 1000.0False
+
+                kukaActionsPenaltyScaleprivilegedActionsTorque: : 0.020.03
+
+                dofFriction: allegroActionsPenaltyScale-1.0: 
+        0.003allegroStiffness
+:         5.0
+fallDistance        : kukaStiffness0.24: 
+300.0        
+        fallPenaltyallegroEffort: : 0.00.35
+
+                kukaEffortobjectLinVelPenaltyScale: : 0.0
+        objectAngVelPenaltyScale[300, 300, 300, 300, 300, 300, 300]: 
+        0.0
+allegroDamping        : 0.25privilegedActions
+:         FalsekukaDamping
+:         20.0
+privilegedActionsTorque        : allegroArmature0.02: 
+0
+                dofFrictionkukaArmature: : 0-1.0
+
+                keypointScale: allegroStiffness1.5: 
+        5.0
+objectBaseSize:         0.04
+kukaStiffness        : randomizeObjectDimensions300.0: 
+True        
+        allegroEffort: withSmallCuboids: 0.35True
+
+                withBigCuboidskukaEffort: : True
+        withSticks: True
+[300, 300, 300, 300, 300, 300, 300]        
+objectType:         block
+allegroDamping        : observationType: 0.25full_state
+
+                kukaDampingsuccessTolerance: : 0.07520.0
+
+                targetSuccessToleranceallegroArmature: : 0.01
+0        
+evalSuccessTolerance        : kukaArmatureNone: 
+        0
+toleranceCurriculumIncrement:         0.9keypointScale
+:         1.5toleranceCurriculumInterval: 
+3000        
+        objectBaseSize: maxConsecutiveSuccesses: 0.0450
+
+                successSteps: randomizeObjectDimensions10: 
+True        
+forceConsecutiveNearGoalSteps        : FalsewithSmallCuboids
+:         TruesaveStates
+: False        
+        withBigCuboids: saveStatesFile: TruerootTensorsDofStates.bin
+
+                loadInitialStateswithSticks: : False
+True        
+loadStatesFile        : rootTensorsDofStates.binobjectType
+:         blockgoodResetBoundary
+:         0
+observationType        : object_typefull_state: 
+tyler_handle_head        
+        successToleranceuse_fixed_set_of_goal_states: : 0.075False
+
+                use_fixed_init_object_pose: targetSuccessToleranceFalse: 
+0.01        
+fixedGoalStates        : NoneevalSuccessTolerance
+:         Noneuse_hack_object_pos_offset
+: False        
+        toleranceCurriculumIncrement: hack_object_pos_offset: 0.90.05
+
+                toleranceCurriculumIntervalrecord_data: : False3000
+
+                record_data_num_steps: maxConsecutiveSuccesses1000: 
+50        
+capture_video        : True
+successSteps        : capture_video_freq10: 
+6000        
+        forceConsecutiveNearGoalStepscapture_video_len: : False600
+
+                turn_off_extra_obssaveStates: : False
+False        
+turn_off_extra_obs_slowly        : FalsesaveStatesFile
+:         rootTensorsDofStates.binturn_off_palm_vel_obs
+: False        
+        loadInitialStates: turn_off_palm_vel_obs_slowly: FalseFalse
+
+                loadStatesFileturn_off_object_vel_obs: : FalserootTensorsDofStates.bin
+
+                turn_off_object_vel_obs_slowly: goodResetBoundaryFalse: 
+        0
+use_obs_dropout:         False
+object_type        : tyler_handle_headinit_tyler_curriculum_scale: 
+0.0        
+        use_fixed_set_of_goal_states: VISUALIZE_PD_TARGET_AS_BLUE_ROBOT: FalseFalse
+
+                withTableForceSensoruse_fixed_init_object_pose: : FalseFalse
+
+                curriculumSuccessRatio: fixedGoalStates0.6: 
+        None
+resetWhenDropped:         True
+use_hack_object_pos_offset        : FalsetimeToUpdateTylerCurriculum
+:         hack_object_pos_offset: 5
+0.05        
+updateStepSizeTylerCurriculum        : record_data0.01: 
+        False
+stateList:         record_data_num_steps: 1000
+        capture_video: True
+        capture_video_freq['joint_pos', 'joint_vel', 'prev_action_targets', 'palm_pos', 'palm_rot', 'palm_vel', 'object_rot', 'object_vel', 'fingertip_pos_rel_palm', 'keypoints_rel_palm', 'keypoints_rel_goal', 'object_scales', 'closest_keypoint_max_dist', 'closest_fingertip_dist', 'lifted_object', 'progress', 'successes', 'reward']: 
+6000        
+        obsList: capture_video_len: 600
+        turn_off_extra_obs: ['joint_pos', 'joint_vel', 'prev_action_targets', 'palm_pos', 'palm_rot', 'object_rot', 'fingertip_pos_rel_palm', 'keypoints_rel_palm', 'keypoints_rel_goal', 'object_scales']False
+
+                fixedSizeKeypointReward: turn_off_extra_obs_slowlyFalse: 
+        False
+fixedSize:         turn_off_palm_vel_obs: False[0.141, 0.03025, 0.0271]
+
+                turn_off_palm_vel_obs_slowlystartArmHigher: : FalseFalse
+
+                use_green_robotturn_off_object_vel_obs: : True
+False        
+sanity_check_controls        : Falseturn_off_object_vel_obs_slowly
+:         False
+add_prev_targets_to_obs:         False
+use_obs_dropout        : jointVelocityPenaltyScaleFalse: 
+0.0        
+        init_tyler_curriculum_scale: jointAccelerationPenaltyScale: 0.00.0
+
+                goalSamplingTypeVISUALIZE_PD_TARGET_AS_BLUE_ROBOT: : deltaFalse
+
+                targetVolumeRegionScale: withTableForceSensor1.0: 
+False        
+deltaGoalDistance        : 0.1curriculumSuccessRatio
+:         0.6deltaRotationDegrees
+:         90.0
+resetWhenDropped        : targetVolumeMinsTrue: 
+        timeToUpdateTylerCurriculum: [-0.35, -0.1, 0.68]
+        5targetVolumeMaxs: 
+        updateStepSizeTylerCurriculum: [0.35, 0.2, 1.05]0.01
+
+                useObsDelay: stateListTrue: 
+        obsDelayMax: 3
+        useActionDelay: False
+        actionDelayMax: 3
+        useObjectStateDelayNoise: ['joint_pos', 'joint_vel', 'prev_action_targets', 'palm_pos', 'palm_rot', 'palm_vel', 'object_rot', 'object_vel', 'fingertip_pos_rel_palm', 'keypoints_rel_palm', 'keypoints_rel_goal', 'object_scales', 'closest_keypoint_max_dist', 'closest_fingertip_dist', 'lifted_object', 'progress', 'successes', 'reward']True
+
+                objectStateDelayMax: obsList10: 
+        objectStateXyzNoiseStd: 0.01
+        objectStateRotationNoiseDegrees: 5.0
+        ['joint_pos', 'joint_vel', 'prev_action_targets', 'palm_pos', 'palm_rot', 'object_rot', 'fingertip_pos_rel_palm', 'keypoints_rel_palm', 'keypoints_rel_goal', 'object_scales']jointVelocityObsNoiseStd
+:         0.01
+fixedSizeKeypointReward        : forceNoResetFalse: 
+False
+                fixedSizeobjectStartPose: : None
+        goalObjectPose: None[0.141, 0.03025, 0.0271]
+
+                handleHeadTypes: startArmHigher: False
+        use_green_robot['hammer', 'screwdriver', 'marker', 'spatula', 'eraser', 'brush']: 
+True        
+useDepthObservation        : Falsesanity_check_controls
+:         FalsedepthImageSize
+: 224        
+        add_prev_targets_to_obs: depthCameraMount: Falsefixed
+
+                depthCameraPosjointVelocityPenaltyScale: : 0.0
+        [0.5, 0.0, 0.8]
+jointAccelerationPenaltyScale        : depthCameraTarget0.0: 
+        goalSamplingType: [0.0, 0.0, 0.5]
+delta        
+depthCameraWristBody        : iiwa14_link_7targetVolumeRegionScale
+:         1.0modifyAssetFrictions
+:         True
+deltaGoalDistance        : robotFriction0.1: 
+0.5
+                deltaRotationDegreesfingerTipFriction: : 90.01.5
+
+                objectFrictiontargetVolumeMins: : 0.5
+        tableFriction: 0.5[-0.35, -0.1, 0.68]
+
+                asset: targetVolumeMaxs
+:             kukaAllegro: urdf/kuka_allegro_description/iiwa14_left_sharpa_adjusted_restricted.urdf
+            [0.35, 0.2, 1.05]
+table:         urdf/table_narrow.urdf
+useObsDelay            : assetFileNameBlockTrue: 
+urdf/objects/cube_multicolor.urdf
+                obsDelayMaxuseSparseReward: : 3False
+
+            taskuseActionDelay: : False
+
+                randomize: actionDelayMaxFalse: 
+3        
+randomization_params        : 
+useObjectStateDelayNoise            : Truefrequency: 
+720        
+            objectStateDelayMax: observations: 10
+
+                        rangeobjectStateXyzNoiseStd: : 0.01
+[0, 0.01]        
+objectStateRotationNoiseDegrees                : range_correlated: 5.0
+        jointVelocityObsNoiseStd: [0, 0.01]
+0.01                
+operation        : additiveforceNoReset
+:                 Falsedistribution
+:         gaussian
+                objectStartPose: schedule: Noneconstant
+
+                        schedule_stepsgoalObjectPose: : 5000None
+
+                    actions: handleHeadTypes: 
+                range: ['hammer', 'screwdriver', 'marker', 'spatula', 'eraser', 'brush'][0.0, 0.01]
+
+                        range_correlateduseDepthObservation: : False
+[0.0, 0.01]        
+depthImageSize                : operation224: 
+additive        
+                depthCameraMountdistribution: : fixedgaussian
+
+                        scheduledepthCameraPos: : linear
+                schedule_steps: 5000
+[0.5, 0.0, 0.8]            
+sim_params        : depthCameraTarget
+:                 gravity: 
+                    range: [0.0, 0.0, 0.5]
+        [0, 0.3]
+depthCameraWristBody:                     iiwa14_link_7operation
+: additive        
+                    modifyAssetFrictions: distribution: Truegaussian
+
+                    actor_paramsrobotFriction: : 
+0.5                
+allegro        : fingerTipFriction
+:                     1.5
+color        : TrueobjectFriction
+:                     0.5
+dof_properties:         
+tableFriction:                         0.5damping
+:         
+asset                            : range
+:             kukaAllegro: urdf/kuka_allegro_description/iiwa14_left_sharpa_adjusted_restricted.urdf[0.7, 1.3]
+
+                                        tableoperation: : urdf/table_narrow.urdfscaling
+
+                                        assetFileNameBlockdistribution: : urdf/objects/cube_multicolor.urdfloguniform
+
+                                useSparseRewardstiffness: : False
+
+                                rangetask: : 
+        [0.7, 1.3]randomize
+:                             False
+operation        : scalingrandomization_params
+:                             
+distribution            : loguniformfrequency
+:                         720
+effort            : observations
+:                             
+range                : range: [0.7, 1.3]
+                            [0, 0.01]operation
+:                 scaling
+range_correlated                            : distribution: uniform
+                        [0, 0.01]friction
+:                 
+operation                            : additiverange
+:                 distribution: [0.7, 1.3]gaussian
+
+                                            operationschedule: : scalingconstant
+
+                                            distributionschedule_steps: : uniform5000
+
+                                    armatureactions: : 
+
+                                            rangerange: : [0.7, 1.3][0.0, 0.01]
+
+                                            operationrange_correlated: : scaling
+                            distribution[0.0, 0.01]: 
+uniform                
+                    operation: rigid_body_propertiesadditive: 
+                
+                        distribution: massgaussian: 
+                
+                            schedule: rangelinear: 
+                schedule_steps: [0.7, 1.3]
+5000
+                                        operation: sim_paramsscaling: 
+
+                                            distribution: gravityuniform: 
+
+                                                setup_only: rangeTrue: 
+                    rigid_shape_properties[0, 0.3]: 
+
+                                            operationfriction: : additive
+
+                                                distributionnum_buckets: : gaussian100
+
+                                        actor_paramsrange: : 
+                [0.7, 1.3]allegro
+:                             
+operation                    : colorscaling: 
+True                            
+                    distribution: dof_properties: uniform
+
+                                                dampingrestitution: : 
+                            
+                            range: num_buckets: 100
+[0.7, 1.3]
+                                                        rangeoperation: : scaling
+                            [0.0, 0.3]distribution
+:                             loguniform
+operation                        : additivestiffness
+:                             
+distribution                            : uniformrange
+:                 object: [0.7, 1.3]
+
+                                                rigid_body_propertiesoperation: : scaling
+
+                                                    massdistribution: : loguniform
+
+                                                    rangeeffort: : 
+                            [0.7, 1.3]range
+:                             operation: scaling[0.7, 1.3]
+
+                                                        distributionoperation: : uniformscaling
+
+                                                        setup_onlydistribution: : Trueuniform
+
+                                            rigid_shape_propertiesfriction: : 
+
+                                                    frictionrange: : 
+                            [0.7, 1.3]num_buckets
+:                             100
+operation                            : scalingrange
+:                             distribution: uniform[0.7, 1.3]
+
+                                                    armatureoperation: : scaling
+
+                                                        rangedistribution: : uniform
+                        [0.7, 1.3]restitution
+:                             
+operation                            : scalingnum_buckets
+:                             100
+distribution                            : uniformrange
+:                     rigid_body_properties: [0.0, 0.3]
+
+                                                    massoperation: : additive
+
+                                                        rangedistribution: : uniform
+    [0.7, 1.3]
+sim                            : operation
+:         scaling
+substeps                            : 2distribution
+:         uniform
+dt                            : setup_only0.016666666666666666: 
+True        
+                    up_axis: rigid_shape_propertiesz: 
+
+                                use_gpu_pipeline: frictionTrue: 
+
+                                    num_client_threads: num_buckets: 8
+100        
+                            gravity: range: [0.0, 0.0, -9.81][0.7, 1.3]
+
+                                    physxoperation: : scaling
+
+                                        num_threadsdistribution: : uniform
+                        restitution: 
+                            num_buckets: 100
+6                            
+            range: solver_type: 1
+[0.0, 0.3]            
+num_position_iterations                            : 8operation
+:             additive
+num_velocity_iterations                            : 0distribution
+:             uniform
+max_gpu_contact_pairs:                 8388608object
+:             
+num_subscenes                    : 4rigid_body_properties
+:             
+contact_offset                        : mass0.002: 
+
+                                        rest_offset: range: 0.0
+            bounce_threshold_velocity[0.7, 1.3]: 
+0.2                            
+            operation: max_depenetration_velocityscaling: 
+1000.0                            
+            distribution: default_buffer_size_multiplieruniform: 
+25.0                            
+setup_only            : contact_collectionTrue: 
+0                    
+rigid_shape_properties: train
+:                         
+friction    : params
+:                             
+num_buckets        : seed100: 
+0                            
+range        : algo: 
+[0.7, 1.3]            
+name                            : a2c_continuousoperation
+:         scaling
+model                            : distribution
+:             uniform
+name                        : continuous_a2c_logstdrestitution
+:         
+network                            : num_buckets
+:             100
+name                            : actor_criticrange
+:             separate: False[0.0, 0.3]
+
+                                        spaceoperation: : additive
+
+                                            continuousdistribution: : uniform
+
+                        mu_activation: simNone: 
+
+                            sigma_activation: substeps: None
+2                    
+        mu_init: dt: 
+                        0.016666666666666666
+name        : defaultup_axis
+:                     z
+sigma_init        : use_gpu_pipeline
+:                         True
+name:         const_initializernum_client_threads
+:                         8
+val        : 0gravity
+:                     fixed_sigma: coef_cond[0.0, 0.0, -9.81]
+
+                    mlpphysx: : 
+
+                            unitsnum_threads: : 6[1024, 1024, 512, 512]
+
+                            solver_type: activation: 1
+elu
+                            num_position_iterations: d2rl: 8
+False
+                            num_velocity_iterations: initializer: 0
+
+                                max_gpu_contact_pairsname: : 8388608default
+
+                            num_subscenesregularizer: : 4
+
+                                contact_offsetname: : 0.002None
+
+                        rest_offset: rnn0.0: 
+
+                            bounce_threshold_velocity: name: 0.2lstm
+
+                            max_depenetration_velocityunits: : 1000.01024
+
+                            default_buffer_size_multiplierlayers: : 25.01
+
+                            contact_collectionbefore_mlp: : 0True
+
+                trainlayer_norm: : True
+
+            paramsload_checkpoint: : 
+False
+                seed: load_path: 0
+
+                algoconfig: : 
+
+                        namename: : a2c_continuous00_bench_1771294860
+
+                    modeldevice_name: : 
+cuda:0
+                        name: env_name: continuous_a2c_logstdrlgpu
+
+                    networkmulti_gpu: : True
+
+                        nameppo: : actor_criticTrue
+
+                        separatemixed_precision: : FalseTrue
+
+                        spacenormalize_input: : True
+
+                            continuousnormalize_value: : True
+
+                                mu_activationnormalize_advantage: : NoneTrue
+
+                                sigma_activationreward_shaper: : None
+
+                                    mu_initscale_value: : 
+0.01
+                                    name: num_actorsdefault: 
+24576                    
+            sigma_init: gamma: 
+0.99                        
+name            : const_initializertau
+:                         0.95val
+:             0
+learning_rate                    : fixed_sigma0.0001: 
+coef_cond
+                        lr_schedule: mlp: adaptive
+
+                            unitsschedule_type: : standard
+            kl_threshold[1024, 1024, 512, 512]: 
+0.016                
+            activation: score_to_winelu: 
+1000000                
+            d2rl: max_epochsFalse: 
+15                
+            initializer: max_frames: 
+100000000000                    
+            name: save_best_afterdefault: 
+100                
+            regularizer: save_frequency: 
+3000                    
+            name: print_statsNone: 
+True            
+            rnn: grad_norm: 
+1.0                
+            name: entropy_coeflstm: 
+0.0                
+            units: truncate_grads1024: 
+True                
+            layers: e_clip1: 
+0.1                
+            before_mlp: minibatch_sizeTrue: 
+98304                
+            layer_norm: mini_epochsTrue: 
+2        
+            load_checkpoint: critic_coefFalse: 
+4.0        
+            load_path: clip_value: 
+True        
+            config: horizon_length: 
+16            
+            name: seq_length00_bench_1771294860: 
+16            
+            device_name: bounds_loss_coefcuda:0: 
+0.0001            
+env_name            : rlgpudefer_summaries_sec
+:             240
+multi_gpu            : Truesummaries_interval_sec_min
+:             60
+ppo            : Truesummaries_interval_sec_max
+:             300
+mixed_precision            : Truegood_reset_boundary
+:             0
+normalize_input            : Trueuse_others_experience
+:             lf
+normalize_value            : Trueoff_policy_ratio
+:             1.0
+normalize_advantage:             Trueexpl_type
+:             mixed_expl_learn_param
+reward_shaper:             
+expl_reward_coef_embd_size:                 32scale_value
+:             0.01expl_reward_coef_scale
+:             0.005
+num_actors:             24576expl_reward_type
+:             entropy
+gamma            : 0.99expl_coef_block_size
+:             4096
+tau            : 0.95player
+:             
+learning_rate                : deterministic0.0001: 
+False            
+                lr_schedule: games_numadaptive: 
+100000            
+                schedule_type: print_statsstandard: 
+False            
+kl_threshold            : central_value_config0.016: 
+            
+                score_to_win: minibatch_size1000000: 
+98304            
+                max_epochs: mini_epochs15: 
+2            
+                max_frames: learning_rate100000000000: 
+0.0001            
+                save_best_after: kl_threshold100: 
+0.016            
+save_frequency                : clip_value3000: 
+True            
+print_stats                : Truenormalize_input
+:             True
+grad_norm                : 1.0truncate_grads
+:             True
+entropy_coef                : 0.0network
+:             
+truncate_grads                    : Truename
+:             actor_critic
+e_clip                    : 0.1central_value
+:             True
+minibatch_size                    : 98304mlp
+:             
+mini_epochs                        : units2: 
+            critic_coef: 4.0
+[1024, 1024, 512, 512]            
+                        clip_value: activationTrue: 
+elu            
+                        horizon_length: d2rl16: 
+False            
+                        seq_length: initializer16: 
+
+                                        bounds_loss_coef: name: 0.0001default
+
+                                    defer_summaries_secregularizer: : 240
+
+                                        summaries_interval_sec_minname: : 60None
+
+            summaries_interval_sec_maxpbt: : 300
+
+                good_reset_boundaryenabled: : 0False
+
+            use_others_experiencetask_name: : lfAllegroKuka
+
+            experimentoff_policy_ratio: : 00_bench_17712948601.0
+
+            num_envsexpl_type: : 
+mixed_expl_learn_param
+            seed: expl_reward_coef_embd_size0: 
+32
+            torch_deterministic: expl_reward_coef_scaleFalse: 
+0.005
+max_iterations            : expl_reward_type
+: entropyphysics_engine
+:             physx
+expl_coef_block_size: 4096pipeline
+:             gpu
+player: sim_device
+: cuda:0                
+deterministic: rl_deviceFalse: 
+cuda:0                
+games_num: graphics_device_id: 100000
+0
+                print_statsnum_threads: : False4
+
+            central_value_configsolver_type: : 1
+
+                minibatch_sizenum_subscenes: : 983044
+
+                testmini_epochs: : False2
+
+                checkpointlearning_rate: : 
+0.0001
+                checkpoint_yaml: kl_threshold: 
+0.016
+sigma                : clip_value
+: Truemulti_gpu
+:                 True
+normalize_input: Truewandb_activate
+:                 False
+truncate_grads: wandb_groupTrue: 
+                
+network: wandb_name: 
+00_bench_1771294860                    
+name: wandb_entityactor_critic: 
+
+                    central_valuewandb_project: : Trueisaacgymenvs
+
+                    mlpwandb_tags: : 
+                        units[]: 
+wandb_logcode_dir: [1024, 1024, 512, 512]
+
+                        capture_video: activationFalse: 
+elu
+capture_video_freq                        : d2rl1464: 
+False
+capture_video_len                        : 100initializer
+: 
+force_render                            : Truename
+: defaultheadless
+:                         True
+regularizer: 
+                            name: None
+pbt: 
+    enabled: False
+task_name: AllegroKuka
+experiment: 00_bench_1771294860
+num_envs: 
+seed: 0
+torch_deterministic: False
+max_iterations: 
+physics_engine: physx
+pipeline: gpu
+sim_device: cuda:0
+rl_device: cuda:0
+graphics_device_id: 0
+num_threads: 4
+solver_type: 1
+num_subscenes: 4
+test: False
+checkpoint: 
+checkpoint_yaml: 
+sigma: 
+multi_gpu: True
+wandb_activate: False
+Setting seed: 0wandb_group
+: 
+wandb_name: 00_bench_1771294860
+wandb_entity: 
+wandb_project: isaacgymenvs
+wandb_tags: []
+wandb_logcode_dir: 
+capture_video: False
+capture_video_freq: 1464
+capture_video_len: 100
+force_render: True
+headless: True
+Setting seed: 1
+Using rl_device: cuda:0
+Using rl_device: cuda:0
+Using sim_device: cuda:0
+Using sim_device: cuda:0
+{'name': '00_bench_1771294860', 'device_name': 'cuda:0', 'env_name': 'rlgpu', 'multi_gpu': True, 'ppo': True, 'mixed_precision': True, 'normalize_input': True, 'normalize_value': True, 'normalize_advantage': True, 'reward_shaper': {'scale_value': 0.01}, 'num_actors': 24576, 'gamma': 0.99, 'tau': 0.95, 'learning_rate': 0.0001, 'lr_schedule': 'adaptive', 'schedule_type': 'standard', 'kl_threshold': 0.016, 'score_to_win': 1000000, 'max_epochs': 15, 'max_frames': 100000000000, 'save_best_after': 100, 'save_frequency': 3000, 'print_stats': True, 'grad_norm': 1.0, 'entropy_coef': 0.0, 'truncate_grads': True, 'e_clip': 0.1, 'minibatch_size': 98304, 'mini_epochs': 2, 'critic_coef': 4.0, 'clip_value': True, 'horizon_length': 16, 'seq_length': 16, 'bounds_loss_coef': 0.0001, 'defer_summaries_sec': 240, 'summaries_interval_sec_min': 60, 'summaries_interval_sec_max': 300, 'good_reset_boundary': 0, 'use_others_experience': 'lf', 'off_policy_ratio': 1.0, 'expl_type': 'mixed_expl_learn_param', 'expl_reward_coef_embd_size': 32, 'expl_reward_coef_scale': 0.005, 'expl_reward_type': 'entropy', 'expl_coef_block_size': 4096, 'player': {'deterministic': False, 'games_num': 100000, 'print_stats': False}, 'central_value_config': {'minibatch_size': 98304, 'mini_epochs': 2, 'learning_rate': 0.0001, 'kl_threshold': 0.016, 'clip_value': True, 'normalize_input': True, 'truncate_grads': True, 'network': {'name': 'actor_critic', 'central_value': True, 'mlp': {'units': [1024, 1024, 512, 512], 'activation': 'elu', 'd2rl': False, 'initializer': {'name': 'default'}, 'regularizer': {'name': 'None'}}}}, 'device': 'cuda:0', 'population_based_training': False, 'pbt_idx': None, 'full_experiment_name': None}{'name': '00_bench_1771294860', 'device_name': 'cuda:0', 'env_name': 'rlgpu', 'multi_gpu': True, 'ppo': True, 'mixed_precision': True, 'normalize_input': True, 'normalize_value': True, 'normalize_advantage': True, 'reward_shaper': {'scale_value': 0.01}, 'num_actors': 24576, 'gamma': 0.99, 'tau': 0.95, 'learning_rate': 0.0001, 'lr_schedule': 'adaptive', 'schedule_type': 'standard', 'kl_threshold': 0.016, 'score_to_win': 1000000, 'max_epochs': 15, 'max_frames': 100000000000, 'save_best_after': 100, 'save_frequency': 3000, 'print_stats': True, 'grad_norm': 1.0, 'entropy_coef': 0.0, 'truncate_grads': True, 'e_clip': 0.1, 'minibatch_size': 98304, 'mini_epochs': 2, 'critic_coef': 4.0, 'clip_value': True, 'horizon_length': 16, 'seq_length': 16, 'bounds_loss_coef': 0.0001, 'defer_summaries_sec': 240, 'summaries_interval_sec_min': 60, 'summaries_interval_sec_max': 300, 'good_reset_boundary': 0, 'use_others_experience': 'lf', 'off_policy_ratio': 1.0, 'expl_type': 'mixed_expl_learn_param', 'expl_reward_coef_embd_size': 32, 'expl_reward_coef_scale': 0.005, 'expl_reward_type': 'entropy', 'expl_coef_block_size': 4096, 'player': {'deterministic': False, 'games_num': 100000, 'print_stats': False}, 'central_value_config': {'minibatch_size': 98304, 'mini_epochs': 2, 'learning_rate': 0.0001, 'kl_threshold': 0.016, 'clip_value': True, 'normalize_input': True, 'truncate_grads': True, 'network': {'name': 'actor_critic', 'central_value': True, 'mlp': {'units': [1024, 1024, 512, 512], 'activation': 'elu', 'd2rl': False, 'initializer': {'name': 'default'}, 'regularizer': {'name': 'None'}}}}, 'device': 'cuda:0', 'population_based_training': False, 'pbt_idx': None, 'full_experiment_name': None}
+
+global_rank = 0 local_rank = 0 world_size = 2
+self.seed = 0
+global_rank = 1 local_rank = 1 world_size = 2
+self.seed = 2
+Started to train
+Adding Central Value Network
+Started to train
+Adding Central Value Network
+global_rank = 1 local_rank = 1 world_size = 2
+Obs type: full_state
+global_rank = 0 local_rank = 0 world_size = 2
+Obs type: full_state
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/gym/spaces/box.py:84: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(f"Box bound precision lowered by casting to {self.dtype}")
+/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/gym/spaces/box.py:84: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+  logger.warn(f"Box bound precision lowered by casting to {self.dtype}")
+[Warning] [carb.gym.plugin] useGpuPipeline is set, forcing GPU PhysX
+[Warning] [carb.gym.plugin] useGpu is set, forcing single scene (0 subscenes)
+Not connected to PVD
++++ Using GPU PhysX
+[Warning] [carb.gym.plugin] useGpuPipeline is set, forcing GPU PhysX
+[Warning] [carb.gym.plugin] useGpu is set, forcing single scene (0 subscenes)
+Not connected to PVD
++++ Using GPU PhysX
+Physics Engine: PhysX
+Physics Device: cuda:0
+GPU Pipeline: enabled
+Physics Engine: PhysX
+Physics Device: cuda:0
+GPU Pipeline: enabled
+Assets template dir: /juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/../../../assets/asset_templates
+Assets template dir: /juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/../../../assets/asset_templates
+Assets template dir: /juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/../../../assets/asset_templates
+Assets template dir: /juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/../../../assets/asset_templates
+Assets template dir: /juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/../../../assets/asset_templates
+Assets template dir: /juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/../../../assets/asset_templates
+Assets template dir: /juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/../../../assets/asset_templates
+Assets template dir: /juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/../../../assets/asset_templates
+/juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/allegro_kuka_base.py:1344: DeprecationWarning: an integer is required (got type isaacgym._bindings.linux-x86_64.gym_38.DofDriveMode).  Implicit conversion to integers using __int__ is deprecated, and may be removed in a future version of Python.
+  asset_options.default_dof_drive_mode = gymapi.DOF_MODE_POS
+Loading asset urdf/kuka_allegro_description/iiwa14_left_sharpa_adjusted_restricted.urdf from /juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/../../../assets
+/juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/allegro_kuka_base.py:1344: DeprecationWarning: an integer is required (got type isaacgym._bindings.linux-x86_64.gym_38.DofDriveMode).  Implicit conversion to integers using __int__ is deprecated, and may be removed in a future version of Python.
+  asset_options.default_dof_drive_mode = gymapi.DOF_MODE_POS
+Loading asset urdf/kuka_allegro_description/iiwa14_left_sharpa_adjusted_restricted.urdf from /juno/u/satvik/sapg/isaacgymenvs/tasks/allegro_kuka/../../../assets
+Loaded asset <isaacgym._bindings.linux-x86_64.gym_38.Asset object at 0x14e8c071f530>
+Allegro num rigid bodies: 30
+Allegro rigid bodies: ['iiwa14_link_0', 'iiwa14_link_1', 'iiwa14_link_2', 'iiwa14_link_3', 'iiwa14_link_4', 'iiwa14_link_5', 'iiwa14_link_6', 'iiwa14_link_7', 'left_thumb_CMC_VL', 'left_thumb_MC', 'left_thumb_MCP_VL', 'left_thumb_PP', 'left_thumb_DP', 'left_index_MCP_VL', 'left_index_PP', 'left_index_MP', 'left_index_DP', 'left_middle_MCP_VL', 'left_middle_PP', 'left_middle_MP', 'left_middle_DP', 'left_ring_MCP_VL', 'left_ring_PP', 'left_ring_MP', 'left_ring_DP', 'left_pinky_MC', 'left_pinky_MCP_VL', 'left_pinky_PP', 'left_pinky_MP', 'left_pinky_DP']
+Loaded asset <isaacgym._bindings.linux-x86_64.gym_38.Asset object at 0x134adb2934b0>
+Allegro num rigid bodies: 30
+Allegro rigid bodies: ['iiwa14_link_0', 'iiwa14_link_1', 'iiwa14_link_2', 'iiwa14_link_3', 'iiwa14_link_4', 'iiwa14_link_5', 'iiwa14_link_6', 'iiwa14_link_7', 'left_thumb_CMC_VL', 'left_thumb_MC', 'left_thumb_MCP_VL', 'left_thumb_PP', 'left_thumb_DP', 'left_index_MCP_VL', 'left_index_PP', 'left_index_MP', 'left_index_DP', 'left_middle_MCP_VL', 'left_middle_PP', 'left_middle_MP', 'left_middle_DP', 'left_ring_MCP_VL', 'left_ring_PP', 'left_ring_MP', 'left_ring_DP', 'left_pinky_MC', 'left_pinky_MCP_VL', 'left_pinky_PP', 'left_pinky_MP', 'left_pinky_DP']
+rb_names = ['iiwa14_link_0', 'iiwa14_link_1', 'iiwa14_link_2', 'iiwa14_link_3', 'iiwa14_link_4', 'iiwa14_link_5', 'iiwa14_link_6', 'iiwa14_link_7', 'left_thumb_CMC_VL', 'left_thumb_MC', 'left_thumb_MCP_VL', 'left_thumb_PP', 'left_thumb_DP', 'left_index_MCP_VL', 'left_index_PP', 'left_index_MP', 'left_index_DP', 'left_middle_MCP_VL', 'left_middle_PP', 'left_middle_MP', 'left_middle_DP', 'left_ring_MCP_VL', 'left_ring_PP', 'left_ring_MP', 'left_ring_DP', 'left_pinky_MC', 'left_pinky_MCP_VL', 'left_pinky_PP', 'left_pinky_MP', 'left_pinky_DP']
+rb_names = ['iiwa14_link_0', 'iiwa14_link_1', 'iiwa14_link_2', 'iiwa14_link_3', 'iiwa14_link_4', 'iiwa14_link_5', 'iiwa14_link_6', 'iiwa14_link_7', 'left_thumb_CMC_VL', 'left_thumb_MC', 'left_thumb_MCP_VL', 'left_thumb_PP', 'left_thumb_DP', 'left_index_MCP_VL', 'left_index_PP', 'left_index_MP', 'left_index_DP', 'left_middle_MCP_VL', 'left_middle_PP', 'left_middle_MP', 'left_middle_DP', 'left_ring_MCP_VL', 'left_ring_PP', 'left_ring_MP', 'left_ring_DP', 'left_pinky_MC', 'left_pinky_MCP_VL', 'left_pinky_PP', 'left_pinky_MP', 'left_pinky_DP']
+Allegro joint names: ['iiwa14_joint_1', 'iiwa14_joint_2', 'iiwa14_joint_3', 'iiwa14_joint_4', 'iiwa14_joint_5', 'iiwa14_joint_6', 'iiwa14_joint_7', 'left_1_thumb_CMC_FE', 'left_thumb_CMC_AA', 'left_thumb_MCP_FE', 'left_thumb_MCP_AA', 'left_thumb_IP', 'left_2_index_MCP_FE', 'left_index_MCP_AA', 'left_index_PIP', 'left_index_DIP', 'left_3_middle_MCP_FE', 'left_middle_MCP_AA', 'left_middle_PIP', 'left_middle_DIP', 'left_4_ring_MCP_FE', 'left_ring_MCP_AA', 'left_ring_PIP', 'left_ring_DIP', 'left_5_pinky_CMC', 'left_pinky_MCP_FE', 'left_pinky_MCP_AA', 'left_pinky_PIP', 'left_pinky_DIP']
+Allegro joint names: ['iiwa14_joint_1', 'iiwa14_joint_2', 'iiwa14_joint_3', 'iiwa14_joint_4', 'iiwa14_joint_5', 'iiwa14_joint_6', 'iiwa14_joint_7', 'left_1_thumb_CMC_FE', 'left_thumb_CMC_AA', 'left_thumb_MCP_FE', 'left_thumb_MCP_AA', 'left_thumb_IP', 'left_2_index_MCP_FE', 'left_index_MCP_AA', 'left_index_PIP', 'left_index_DIP', 'left_3_middle_MCP_FE', 'left_middle_MCP_AA', 'left_middle_PIP', 'left_middle_DIP', 'left_4_ring_MCP_FE', 'left_ring_MCP_AA', 'left_ring_PIP', 'left_ring_DIP', 'left_5_pinky_CMC', 'left_pinky_MCP_FE', 'left_pinky_MCP_AA', 'left_pinky_PIP', 'left_pinky_DIP']
+Initializing _tyler_curriculum_scale to 0.0
+Box(-1.0, 1.0, (29,), float32) Box(-inf, inf, (140,), float32) Box(-inf, inf, (162,), float32)
+seq_length: 16
+current training device: cuda:0
+num_minibatches: 4
+/juno/u/satvik/sapg/rl_games/rl_games/common/a2c_common.py:257: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = torch.cuda.amp.GradScaler(enabled=self.mixed_precision and self.ppo_device != 'cpu')
+build mlp: 1024
+RunningMeanStd:  (1,)
+RunningMeanStd:  (140,)
+Initializing _tyler_curriculum_scale to 0.0
+Box(-1.0, 1.0, (29,), float32) Box(-inf, inf, (140,), float32) Box(-inf, inf, (162,), float32)
+seq_length: 16
+current training device: cuda:0
+num_minibatches: 4
+/juno/u/satvik/sapg/rl_games/rl_games/common/a2c_common.py:257: FutureWarning: `torch.cuda.amp.GradScaler(args...)` is deprecated. Please use `torch.amp.GradScaler('cuda', args...)` instead.
+  self.scaler = torch.cuda.amp.GradScaler(enabled=self.mixed_precision and self.ppo_device != 'cpu')
+build mlp: 1024
+RunningMeanStd:  (1,)
+RunningMeanStd:  (140,)
+build mlp: 194
+RunningMeanStd:  (1,)
+RunningMeanStd:  (162,)
+build mlp: 194
+RunningMeanStd:  (1,)
+RunningMeanStd:  (162,)
+====================broadcasting parameters
+====================broadcasting parameters
+--------------------------------------------------------------------------------
+At self.control_steps = 0, should start video capture at start of next episode
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+At self.control_steps = 0, should start video capture at start of next episode
+--------------------------------------------------------------------------------
+/juno/u/satvik/sapg/rl_games/rl_games/algos_torch/torch_ext.py:331: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  self.current_size = torch.tensor(size_sum, dtype = torch.int32)
+/juno/u/satvik/sapg/rl_games/rl_games/algos_torch/torch_ext.py:331: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  self.current_size = torch.tensor(size_sum, dtype = torch.int32)
+/juno/u/satvik/sapg/rl_games/rl_games/algos_torch/a2c_continuous.py:127: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=self.mixed_precision):
+/juno/u/satvik/sapg/rl_games/rl_games/algos_torch/a2c_continuous.py:127: FutureWarning: `torch.cuda.amp.autocast(args...)` is deprecated. Please use `torch.amp.autocast('cuda', args...)` instead.
+  with torch.cuda.amp.autocast(enabled=self.mixed_precision):
+
+Timing:
+  Play time               : 5.397 s
+  Update time             : 3.678 s
+
+Timing:  Time to train epoch     : 9.076 s
+
+
+  Play time               : 5.601 s
+  Update time             : 3.682 s
+  Time to train epoch     : 9.283 s
+
+
+Statistics:
+  fps step                    : 155,193
+  fps step + policy inference : 140,417
+  fps total                   : 84,721
+  epoch                       : 1 / 15
+  frames                      : 0 / 100,000,000,000
+
+
+Policy 0: 
+Frame 0
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 0.127
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.419
+  reset/hand_far_from_object                        : 0.419
+  reset/object_z_low                                : 0.163
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.000
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.000
+  closest_keypoint_max_dist_per_block/block_0       : 0.000
+  closest_keypoint_max_dist_per_block/block_1       : 0.000
+  closest_keypoint_max_dist_per_block/block_2       : 0.000
+  closest_keypoint_max_dist_per_block/block_3       : 0.000
+  closest_keypoint_max_dist_per_block/block_4       : 0.000
+  closest_keypoint_max_dist_per_block/block_5       : 0.000
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+  Play time               : 3.733 s
+  Update time             : 2.133 s
+  Time to train epoch     : 5.866 s
+
+
+Timing:
+  Play time               : 3.730 s
+  Update time             : 2.135 s
+  Time to train epoch     : 5.865 s
+
+
+Statistics:
+  fps step                    : 253,813
+  fps step + policy inference : 210,677
+  fps total                   : 134,077
+  epoch                       : 2 / 15
+  frames                      : 786,432 / 100,000,000,000
+
+
+Policy 0: 
+Frame 786432
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 0.315
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.349
+  reset/hand_far_from_object                        : 0.153
+  reset/object_z_low                                : 0.497
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.000
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.000
+  closest_keypoint_max_dist_per_block/block_0       : 0.000
+  closest_keypoint_max_dist_per_block/block_1       : 0.000
+  closest_keypoint_max_dist_per_block/block_2       : 0.000
+  closest_keypoint_max_dist_per_block/block_3       : 0.000
+  closest_keypoint_max_dist_per_block/block_4       : 0.000
+  closest_keypoint_max_dist_per_block/block_5       : 0.000
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+  Play time               : 2.631 s
+  Update time             : 1.284 s
+  Time to train epoch     : 3.914 s
+
+
+Timing:
+  Play time               : 2.631 s
+  Update time             : 1.283 s
+  Time to train epoch     : 3.914 s
+
+
+Statistics:
+  fps step                    : 348,240
+  fps step + policy inference : 298,935
+  fps total                   : 200,903
+  epoch                       : 3 / 15
+  frames                      : 1,572,864 / 100,000,000,000
+
+
+Policy 0: 
+Frame 1572864
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 0.459
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.135
+  reset/hand_far_from_object                        : 0.054
+  reset/object_z_low                                : 0.812
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.000
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.000
+  closest_keypoint_max_dist_per_block/block_0       : 0.000
+  closest_keypoint_max_dist_per_block/block_1       : 0.000
+  closest_keypoint_max_dist_per_block/block_2       : 0.000
+  closest_keypoint_max_dist_per_block/block_3       : 0.000
+  closest_keypoint_max_dist_per_block/block_4       : 0.000
+  closest_keypoint_max_dist_per_block/block_5       : 0.000
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+Timing:
+
+  Play time               : 2.494 s
+  Update time             : 1.417 s  Play time               : 2.437 s
+
+  Time to train epoch     : 3.911 s
+  Update time             : 1.417 s
+
+  Time to train epoch     : 3.854 s
+
+
+Statistics:
+  fps step                    : 368,443
+  fps step + policy inference : 315,297
+  fps total                   : 201,067
+  epoch                       : 4 / 15
+  frames                      : 2,359,296 / 100,000,000,000
+
+
+Policy 0: 
+Frame 2359296
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 0.581
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.112
+  reset/hand_far_from_object                        : 0.044
+  reset/object_z_low                                : 0.844
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.000
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.000
+  closest_keypoint_max_dist_per_block/block_0       : 0.000
+  closest_keypoint_max_dist_per_block/block_1       : 0.000
+  closest_keypoint_max_dist_per_block/block_2       : 0.000
+  closest_keypoint_max_dist_per_block/block_3       : 0.000
+  closest_keypoint_max_dist_per_block/block_4       : 0.000
+  closest_keypoint_max_dist_per_block/block_5       : 0.000
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+Timing:
+
+  Play time               : 2.424 s
+  Update time             : 1.142 s
+  Play time               : 2.424 s  Time to train epoch     : 3.565 s
+
+
+  Update time             : 1.141 s
+  Time to train epoch     : 3.565 s
+
+
+Statistics:
+  fps step                    : 379,827
+  fps step + policy inference : 324,447
+  fps total                   : 220,573
+  epoch                       : 5 / 15
+  frames                      : 3,145,728 / 100,000,000,000
+
+
+Policy 0: 
+Frame 3145728
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 0.706
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.104
+  reset/hand_far_from_object                        : 0.043
+  reset/object_z_low                                : 0.853
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.000
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.497
+  closest_keypoint_max_dist_per_block/block_0       : 0.000
+  closest_keypoint_max_dist_per_block/block_1       : 0.000
+  closest_keypoint_max_dist_per_block/block_2       : 0.000
+  closest_keypoint_max_dist_per_block/block_3       : 0.000
+  closest_keypoint_max_dist_per_block/block_4       : 0.000
+  closest_keypoint_max_dist_per_block/block_5       : 0.000
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+
+Timing:  Play time               : 2.394 s
+
+  Update time             : 1.123 s
+  Time to train epoch     : 3.517 s
+
+  Play time               : 2.393 s
+  Update time             : 1.123 s
+  Time to train epoch     : 3.517 s
+
+
+Statistics:
+  fps step                    : 383,538
+  fps step + policy inference : 328,577
+  fps total                   : 223,625
+  epoch                       : 6 / 15
+  frames                      : 3,932,160 / 100,000,000,000
+
+
+Policy 0: 
+Frame 3932160
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 0.826
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.104
+  reset/hand_far_from_object                        : 0.041
+  reset/object_z_low                                : 0.855
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.000
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.497
+  closest_keypoint_max_dist_per_block/block_0       : 0.001
+  closest_keypoint_max_dist_per_block/block_1       : 0.001
+  closest_keypoint_max_dist_per_block/block_2       : 0.001
+  closest_keypoint_max_dist_per_block/block_3       : 0.000
+  closest_keypoint_max_dist_per_block/block_4       : 0.000
+  closest_keypoint_max_dist_per_block/block_5       : 0.000
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+
+Timing:  Play time               : 2.421 s
+
+  Update time             : 1.130 s
+  Time to train epoch     : 3.552 s
+
+  Play time               : 2.420 s
+  Update time             : 1.132 s
+  Time to train epoch     : 3.552 s
+
+
+Statistics:
+  fps step                    : 379,783
+  fps step + policy inference : 325,015
+  fps total                   : 221,422
+  epoch                       : 7 / 15
+  frames                      : 4,718,592 / 100,000,000,000
+
+
+Policy 0: 
+Frame 4718592
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 0.950
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.102
+  reset/hand_far_from_object                        : 0.039
+  reset/object_z_low                                : 0.859
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.000
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.510
+  closest_keypoint_max_dist_per_block/block_0       : 0.001
+  closest_keypoint_max_dist_per_block/block_1       : 0.001
+  closest_keypoint_max_dist_per_block/block_2       : 0.001
+  closest_keypoint_max_dist_per_block/block_3       : 0.000
+  closest_keypoint_max_dist_per_block/block_4       : 0.001
+  closest_keypoint_max_dist_per_block/block_5       : 0.000
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+Timing:
+
+  Play time               : 2.496 s
+  Update time             : 1.145 s  Play time               : 2.496 s
+
+  Time to train epoch     : 3.641 s
+  Update time             : 1.145 s
+
+  Time to train epoch     : 3.641 s
+
+
+Statistics:
+  fps step                    : 368,175
+  fps step + policy inference : 315,128
+  fps total                   : 215,995
+  epoch                       : 8 / 15
+  frames                      : 5,505,024 / 100,000,000,000
+
+
+Policy 0: 
+Frame 5505024
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 1.071
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.098
+  reset/hand_far_from_object                        : 0.037
+  reset/object_z_low                                : 0.866
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.001
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.543
+  closest_keypoint_max_dist_per_block/block_0       : 0.001
+  closest_keypoint_max_dist_per_block/block_1       : 0.001
+  closest_keypoint_max_dist_per_block/block_2       : 0.001
+  closest_keypoint_max_dist_per_block/block_3       : 0.000
+  closest_keypoint_max_dist_per_block/block_4       : 0.001
+  closest_keypoint_max_dist_per_block/block_5       : 0.001
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+
+Timing:  Play time               : 2.366 s
+
+  Update time             : 1.174 s
+  Time to train epoch     : 3.540 s
+
+  Play time               : 2.434 s
+  Update time             : 1.173 s
+  Time to train epoch     : 3.607 s
+
+
+Statistics:
+  fps step                    : 380,324
+  fps step + policy inference : 323,119
+  fps total                   : 218,045
+  epoch                       : 9 / 15
+  frames                      : 6,291,456 / 100,000,000,000
+
+
+Policy 0: 
+Frame 6291456
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 1.192
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.084
+  reset/hand_far_from_object                        : 0.031
+  reset/object_z_low                                : 0.885
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.001
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.543
+  closest_keypoint_max_dist_per_block/block_0       : 0.001
+  closest_keypoint_max_dist_per_block/block_1       : 0.001
+  closest_keypoint_max_dist_per_block/block_2       : 0.001
+  closest_keypoint_max_dist_per_block/block_3       : 0.000
+  closest_keypoint_max_dist_per_block/block_4       : 0.001
+  closest_keypoint_max_dist_per_block/block_5       : 0.001
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+Timing:
+
+  Play time               : 2.387 s
+  Update time             : 1.176 s
+  Play time               : 2.389 s  Time to train epoch     : 3.563 s
+
+
+  Update time             : 1.174 s
+  Time to train epoch     : 3.563 s
+
+
+Statistics:
+  fps step                    : 390,817
+  fps step + policy inference : 329,194
+  fps total                   : 220,736
+  epoch                       : 10 / 15
+  frames                      : 7,077,888 / 100,000,000,000
+
+
+Policy 0: 
+Frame 7077888
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 1.311
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.070
+  reset/hand_far_from_object                        : 0.026
+  reset/object_z_low                                : 0.904
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.001
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.543
+  closest_keypoint_max_dist_per_block/block_0       : 0.001
+  closest_keypoint_max_dist_per_block/block_1       : 0.001
+  closest_keypoint_max_dist_per_block/block_2       : 0.001
+  closest_keypoint_max_dist_per_block/block_3       : 0.000
+  closest_keypoint_max_dist_per_block/block_4       : 0.001
+  closest_keypoint_max_dist_per_block/block_5       : 0.001
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+saving next best rewards:  [36.68]
+=> saving checkpoint 'runs/00_bench_1771294860/nn/00_bench_1771294860.pth'
+Exception [Errno 2] No such file or directory: 'runs/00_bench_1771294860/best/model.pth' when trying to execute <built-in function remove> with args:('runs/00_bench_1771294860/best/model.pth',) and kwargs:{}...
+Waiting 1 before trying again...
+Exception [Errno 2] No such file or directory: 'runs/00_bench_1771294860/best/model.pth' when trying to execute <built-in function remove> with args:('runs/00_bench_1771294860/best/model.pth',) and kwargs:{}...
+Waiting 2 before trying again...
+Exception [Errno 2] No such file or directory: 'runs/00_bench_1771294860/best/model.pth' when trying to execute <built-in function remove> with args:('runs/00_bench_1771294860/best/model.pth',) and kwargs:{}...
+Waiting 4 before trying again...
+Exception [Errno 2] No such file or directory: 'runs/00_bench_1771294860/best/model.pth' when trying to execute <built-in function remove> with args:('runs/00_bench_1771294860/best/model.pth',) and kwargs:{}...
+Waiting 8 before trying again...
+Exception [Errno 2] No such file or directory: 'runs/00_bench_1771294860/best/model.pth' when trying to execute <built-in function remove> with args:('runs/00_bench_1771294860/best/model.pth',) and kwargs:{}...
+Waiting 16 before trying again...
+
+Timing:
+  Play time               : 2.408 s
+  Update time             : 1.324 s
+  Time to train epoch     : 3.732 s
+
+
+Timing:
+  Play time               : 2.407 s
+  Update time             : 1.325 s
+  Time to train epoch     : 3.732 s
+
+
+Statistics:
+  fps step                    : 386,769
+  fps step + policy inference : 326,685
+  fps total                   : 210,716
+  epoch                       : 11 / 15
+  frames                      : 7,864,320 / 100,000,000,000
+
+
+Policy 0: 
+Frame 7864320
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 2.110
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.059
+  reset/hand_far_from_object                        : 0.022
+  reset/object_z_low                                : 0.920
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.001
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.543
+  closest_keypoint_max_dist_per_block/block_0       : 0.001
+  closest_keypoint_max_dist_per_block/block_1       : 0.001
+  closest_keypoint_max_dist_per_block/block_2       : 0.001
+  closest_keypoint_max_dist_per_block/block_3       : 0.001
+  closest_keypoint_max_dist_per_block/block_4       : 0.001
+  closest_keypoint_max_dist_per_block/block_5       : 0.001
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+  Play time               : 2.347 s
+
+Timing:  Update time             : 1.290 s
+  Time to train epoch     : 3.637 s
+
+
+  Play time               : 2.347 s
+  Update time             : 1.290 s
+  Time to train epoch     : 3.637 s
+
+
+Statistics:
+  fps step                    : 398,032
+  fps step + policy inference : 335,083
+  fps total                   : 216,203
+  epoch                       : 12 / 15
+  frames                      : 8,650,752 / 100,000,000,000
+
+
+Policy 0: 
+Frame 8650752
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 2.232
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.049
+  reset/hand_far_from_object                        : 0.018
+  reset/object_z_low                                : 0.933
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.001
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.543
+  closest_keypoint_max_dist_per_block/block_0       : 0.001
+  closest_keypoint_max_dist_per_block/block_1       : 0.001
+  closest_keypoint_max_dist_per_block/block_2       : 0.001
+  closest_keypoint_max_dist_per_block/block_3       : 0.001
+  closest_keypoint_max_dist_per_block/block_4       : 0.001
+  closest_keypoint_max_dist_per_block/block_5       : 0.001
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+Timing:
+
+  Play time               : 2.369 s
+  Play time               : 2.368 s  Update time             : 1.179 s
+
+  Update time             : 1.180 s  Time to train epoch     : 3.549 s
+
+
+  Time to train epoch     : 3.549 s
+
+
+Statistics:
+  fps step                    : 393,785
+  fps step + policy inference : 332,063
+  fps total                   : 221,612
+  epoch                       : 13 / 15
+  frames                      : 9,437,184 / 100,000,000,000
+
+
+Policy 0: 
+Frame 9437184
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 2.355
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.042
+  reset/hand_far_from_object                        : 0.015
+  reset/object_z_low                                : 0.943
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.001
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.543
+  closest_keypoint_max_dist_per_block/block_0       : 0.001
+  closest_keypoint_max_dist_per_block/block_1       : 0.001
+  closest_keypoint_max_dist_per_block/block_2       : 0.001
+  closest_keypoint_max_dist_per_block/block_3       : 0.001
+  closest_keypoint_max_dist_per_block/block_4       : 0.001
+  closest_keypoint_max_dist_per_block/block_5       : 0.001
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+Timing:
+
+  Play time               : 2.408 s
+  Update time             : 1.182 s
+  Play time               : 2.407 s  Time to train epoch     : 3.589 s
+
+
+  Update time             : 1.183 s
+  Time to train epoch     : 3.589 s
+
+
+Statistics:
+  fps step                    : 387,410
+  fps step + policy inference : 326,658
+  fps total                   : 219,102
+  epoch                       : 14 / 15
+  frames                      : 10,223,616 / 100,000,000,000
+
+
+Policy 0: 
+Frame 10223616
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 2.477
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.035
+  reset/hand_far_from_object                        : 0.013
+  reset/object_z_low                                : 0.952
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.001
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.543
+  closest_keypoint_max_dist_per_block/block_0       : 0.001
+  closest_keypoint_max_dist_per_block/block_1       : 0.001
+  closest_keypoint_max_dist_per_block/block_2       : 0.001
+  closest_keypoint_max_dist_per_block/block_3       : 0.001
+  closest_keypoint_max_dist_per_block/block_4       : 0.001
+  closest_keypoint_max_dist_per_block/block_5       : 0.001
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+
+Timing:
+  Play time               : 2.500 s
+  Update time             : 1.184 s
+
+Timing:  Time to train epoch     : 3.684 s
+
+
+  Play time               : 2.500 s
+  Update time             : 1.184 s
+  Time to train epoch     : 3.684 s
+
+
+Statistics:
+  fps step                    : 371,181
+  fps step + policy inference : 314,573
+  fps total                   : 213,466
+  epoch                       : 15 / 15
+  frames                      : 11,010,048 / 100,000,000,000
+
+
+Policy 0: 
+Frame 11010048
+  scalars/success_tolerance                         : 0.075
+  tyler_curriculum_scale                            : 0.000
+  mean_successes                                    : 0.000
+  mean_success_ratio                                : 0.000
+  minutes_elapsed_since_last_update                 : 2.600
+  success_ratio                                     : 0.000
+  turn_off_object_vel_obs_scale                     : 1.000
+  turn_off_palm_vel_obs_scale                       : 1.000
+  turn_off_extra_obs_scale                          : 1.000
+  reset/dropped                                     : 0.031
+  reset/hand_far_from_object                        : 0.012
+  reset/object_z_low                                : 0.957
+  successes                                         : 0.000
+  successes_median                                  : 0.000
+  successes_max                                     : 0.000
+  successes_per_block/block_0                       : 0.000
+  successes_per_block/block_1                       : 0.000
+  successes_per_block/block_2                       : 0.000
+  successes_per_block/block_3                       : 0.000
+  successes_per_block/block_4                       : 0.000
+  successes_per_block/block_5                       : 0.000
+  closest_keypoint_max_dist                         : 0.001
+  closest_keypoint_max_dist_median                  : 0.000
+  closest_keypoint_max_dist_max                     : 0.543
+  closest_keypoint_max_dist_per_block/block_0       : 0.002
+  closest_keypoint_max_dist_per_block/block_1       : 0.001
+  closest_keypoint_max_dist_per_block/block_2       : 0.001
+  closest_keypoint_max_dist_per_block/block_3       : 0.001
+  closest_keypoint_max_dist_per_block/block_4       : 0.001
+  closest_keypoint_max_dist_per_block/block_5       : 0.001
+  true_objective_mean                               : 0.000
+  true_objective_max                                : 0.000
+
+=> saving checkpoint 'runs/00_bench_1771294860/nn/last_00_bench_1771294860_ep_15_rew__14.86_.pth'
+MAX EPOCHS NUM!
+Error executing job with overrides: ['task/env=reorientation', '++task.env.useSparseReward=False', 'headless=True', 'task.env.numEnvs=24576', 'train.params.config.minibatch_size=98304', 'multi_gpu=True', 'train.params.config.good_reset_boundary=0', 'task.env.goodResetBoundary=0', 'train.params.config.use_others_experience=lf', 'train.params.config.off_policy_ratio=1.0', 'train.params.config.expl_type=mixed_expl_learn_param', 'train.params.config.expl_reward_type=entropy', 'train.params.config.expl_coef_block_size=4096', 'train.params.config.expl_reward_coef_scale=0.005', 'train.params.network.space.continuous.fixed_sigma=coef_cond', 'wandb_activate=False', 'seed=0', 'experiment=00_bench_1771294860', 'task.env.object_type=tyler_handle_head', 'task.env.useRelativeControl=False', 'task.task.randomize=False', 'task=AllegroKukaLSTMAsymmetric', 'task.env.objectBaseSize=0.04', 'task.env.kukaActionsPenaltyScale=0.03', 'task.env.allegroActionsPenaltyScale=0.003', 'task.env.stateList=[joint_pos,joint_vel,prev_action_targets,palm_pos,palm_rot,palm_vel,object_rot,object_vel,fingertip_pos_rel_palm,keypoints_rel_palm,keypoints_rel_goal,object_scales,closest_keypoint_max_dist,closest_fingertip_dist,lifted_object,progress,successes,reward]', 'task.env.obsList=[joint_pos,joint_vel,prev_action_targets,palm_pos,palm_rot,object_rot,fingertip_pos_rel_palm,keypoints_rel_palm,keypoints_rel_goal,object_scales]', 'task.env.use_fixed_set_of_goal_states=False', 'task.env.controlFrequencyInv=1', 'task.env.useObsDelay=True', 'task.env.useActionDelay=False', 'task.env.useObjectStateDelayNoise=True', 'task.env.jointVelocityObsNoiseStd=0.01', 'task.env.successSteps=10', 'task.env.goalSamplingType=delta', 'task.env.dofSpeedScale=1.5', 'task.env.robotFriction=0.5', 'task.env.tableResetZRange=0.025', 'task.env.resetWhenDropped=True', 'task.env.armMovingAverage=0.1', 'train.params.config.max_epochs=15']
+Error executing job with overrides: ['task/env=reorientation', '++task.env.useSparseReward=False', 'headless=True', 'task.env.numEnvs=24576', 'train.params.config.minibatch_size=98304', 'multi_gpu=True', 'train.params.config.good_reset_boundary=0', 'task.env.goodResetBoundary=0', 'train.params.config.use_others_experience=lf', 'train.params.config.off_policy_ratio=1.0', 'train.params.config.expl_type=mixed_expl_learn_param', 'train.params.config.expl_reward_type=entropy', 'train.params.config.expl_coef_block_size=4096', 'train.params.config.expl_reward_coef_scale=0.005', 'train.params.network.space.continuous.fixed_sigma=coef_cond', 'wandb_activate=False', 'seed=0', 'experiment=00_bench_1771294860', 'task.env.object_type=tyler_handle_head', 'task.env.useRelativeControl=False', 'task.task.randomize=False', 'task=AllegroKukaLSTMAsymmetric', 'task.env.objectBaseSize=0.04', 'task.env.kukaActionsPenaltyScale=0.03', 'task.env.allegroActionsPenaltyScale=0.003', 'task.env.stateList=[joint_pos,joint_vel,prev_action_targets,palm_pos,palm_rot,palm_vel,object_rot,object_vel,fingertip_pos_rel_palm,keypoints_rel_palm,keypoints_rel_goal,object_scales,closest_keypoint_max_dist,closest_fingertip_dist,lifted_object,progress,successes,reward]', 'task.env.obsList=[joint_pos,joint_vel,prev_action_targets,palm_pos,palm_rot,object_rot,fingertip_pos_rel_palm,keypoints_rel_palm,keypoints_rel_goal,object_scales]', 'task.env.use_fixed_set_of_goal_states=False', 'task.env.controlFrequencyInv=1', 'task.env.useObsDelay=True', 'task.env.useActionDelay=False', 'task.env.useObjectStateDelayNoise=True', 'task.env.jointVelocityObsNoiseStd=0.01', 'task.env.successSteps=10', 'task.env.goalSamplingType=delta', 'task.env.dofSpeedScale=1.5', 'task.env.robotFriction=0.5', 'task.env.tableResetZRange=0.025', 'task.env.resetWhenDropped=True', 'task.env.armMovingAverage=0.1', 'train.params.config.max_epochs=15']
+Traceback (most recent call last):
+  File "/juno/u/satvik/sapg/isaacgymenvs/train.py", line 287, in launch
+    vec_env.change_on_restart(omegaconf_to_dict(cfg.task))
+AttributeError: 'int' object has no attribute 'change_on_restart'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/juno/u/satvik/sapg/isaacgymenvs/train.py", line 287, in launch
+    vec_env.change_on_restart(omegaconf_to_dict(cfg.task))
+AttributeError: 'int' object has no attribute 'change_on_restart'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+W0216 18:24:40.649625 16627523958592 torch/distributed/elastic/multiprocessing/api.py:858] Sending process 2372790 closing signal SIGTERM
+E0216 18:24:41.566245 16627523958592 torch/distributed/elastic/multiprocessing/api.py:833] failed (exitcode: 1) local_rank: 0 (pid: 2372789) of binary: /juno/u/satvik/miniconda3/envs/sapg/bin/python
+Traceback (most recent call last):
+  File "/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/torch/distributed/run.py", line 905, in <module>
+    main()
+  File "/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 348, in wrapper
+    return f(*args, **kwargs)
+  File "/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/torch/distributed/run.py", line 901, in main
+    run(args)
+  File "/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/torch/distributed/run.py", line 892, in run
+    elastic_launch(
+  File "/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 133, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/juno/u/satvik/miniconda3/envs/sapg/lib/python3.8/site-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+isaacgymenvs.train FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-02-16_18:24:40
+  host      : iliad8.stanford.edu
+  rank      : 0 (local_rank: 0)
+  exitcode  : 1 (pid: 2372789)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

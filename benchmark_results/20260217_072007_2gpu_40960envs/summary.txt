@@ -1,0 +1,32 @@
+============================================================
+GPU UTILIZATION BENCHMARK RESULTS
+  Config: 40960 envs, 2 GPUs, minibatch=163840
+============================================================
+
+GPU SM Utilization (after warmup):
+----------------------------------------
+  GPU 0:
+    Mean:   23.0%
+    Median: 0.0%
+    Min:    0.0%
+    Max:    100.0%
+    Std:    33.4%
+    Samples: 254
+  GPU 1:
+    Mean:   62.8%
+    Median: 82.5%
+    Min:    0.0%
+    Max:    100.0%
+    Std:    42.6%
+    Samples: 254
+
+Training Timing (per epoch, after warmup):
+----------------------------------------
+  Play time:   mean=4.407s, std=0.286s
+  Update time: mean=1.935s, std=0.096s
+  Total time:  mean=6.448s, std=0.308s
+  Throughput:  101643 samples/sec
+  Update/Total ratio: 30.0%
+
+  Measured epochs: 26
+============================================================

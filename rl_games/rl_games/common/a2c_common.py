@@ -106,7 +106,8 @@ class A2CBase(BaseAlgorithm):
             self.world_size = int(os.getenv("WORLD_SIZE", "1"))
 
             import hashlib
-            dist.init_process_group("gloo", rank=self.global_rank, world_size=self.world_size, init_method=f'tcp://127.0.0.1:{23400 + int(hashlib.md5(self.experiment_name[3:].encode("utf-8")).hexdigest(), 16) % 500}')
+            # Use NCCL for GPU tensor ops (all_reduce, broadcast), GLOO for CPU/object ops (broadcast_object_list, gather_object)
+            dist.init_process_group("cpu:gloo,cuda:nccl", rank=self.global_rank, world_size=self.world_size, init_method=f'tcp://127.0.0.1:{23400 + int(hashlib.md5(self.experiment_name[3:].encode("utf-8")).hexdigest(), 16) % 500}')
 
             self.device_name = 'cuda:0'
             config['device'] = self.device_name

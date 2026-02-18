@@ -44,8 +44,12 @@ if [ "$USE_DEPTH" = "1" ]; then
     MINIBATCH_SIZE=16384
 else
     DEPTH_FLAGS=()
-    NUM_ENVS=24576
-    MINIBATCH_SIZE=98304
+    # NUM_ENVS=24576
+    # MINIBATCH_SIZE=98304
+    # NUM_ENVS=40960
+    # MINIBATCH_SIZE=163840
+    NUM_ENVS=8192
+    MINIBATCH_SIZE=32768
 fi
 
 # ---- Launcher: torchrun for multi-GPU, plain python otherwise ----

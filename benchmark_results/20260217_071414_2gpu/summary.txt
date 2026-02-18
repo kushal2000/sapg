@@ -1,0 +1,30 @@
+============================================================
+GPU UTILIZATION BENCHMARK RESULTS
+============================================================
+
+GPU SM Utilization (after warmup):
+----------------------------------------
+  GPU 0:
+    Mean:   20.8%
+    Median: 0.0%
+    Min:    0.0%
+    Max:    100.0%
+    Std:    33.6%
+    Samples: 182
+  GPU 1:
+    Mean:   64.3%
+    Median: 98.0%
+    Min:    0.0%
+    Max:    100.0%
+    Std:    42.8%
+    Samples: 182
+
+Training Timing (per epoch, after warmup):
+----------------------------------------
+  Play time:   mean=2.445s, std=0.100s
+  Update time: mean=1.263s, std=0.081s
+  Total time:  mean=3.707s, std=0.124s
+  Update/Total ratio: 34.1%
+
+  Measured epochs: 26
+============================================================

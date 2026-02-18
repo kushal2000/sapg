@@ -1,0 +1,10 @@
+Config: 24576 envs/GPU, 2 GPUs (total 49152 envs)
+----------------------------------------
+  fps step:  mean=366,299
+  fps total: mean=204,043
+  Play time:   mean=2.640s
+  Update time: mean=1.285s
+  Total time:  mean=3.992s
+  GPU 0 SM util: mean=20.9%, median=0.0%
+  GPU 1 SM util: mean=59.7%, median=69.0%
+  Measured epochs: 25

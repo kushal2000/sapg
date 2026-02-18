@@ -13,7 +13,14 @@
       "Bash(tee:*)",
       "Bash(grep:*)",
       "Bash(/juno/u/satvik/miniconda3/envs/mochi_gym/bin/python:*)",
-      "Bash(MOCHI_ASSETS_PATH=/juno/u/satvik/mochi/assets /juno/u/satvik/miniconda3/envs/mochi_gym/bin/python:*)"
+      "Bash(MOCHI_ASSETS_PATH=/juno/u/satvik/mochi/assets /juno/u/satvik/miniconda3/envs/mochi_gym/bin/python:*)",
+      "Bash(nvidia-smi:*)",
+      "Bash(ls:*)",
+      "Bash(git checkout:*)",
+      "Bash(/juno/u/satvik/miniconda3/envs/sapg/bin/python:*)",
+      "Bash(bash train/train_scripts/benchmark_gpu.sh 1 15)",
+      "Bash(python3:*)",
+      "Bash(bash train/train_scripts/benchmark_gpu.sh 2 15)"
     ]
   }
 }
