@@ -16,8 +16,14 @@ class A2CAgent(a2c_common.ContinuousA2CBase):
     def __init__(self, base_name, params):
         a2c_common.ContinuousA2CBase.__init__(self, base_name, params)
         
+        obs_shape_is_dict = isinstance(self.obs_shape, dict)
+        proprio_dim = self.obs_shape['proprio'][0] if obs_shape_is_dict else self.obs_shape[0]
         if self.intr_reward_coef_embd is not None and not (self.expl_type.startswith('mixed_expl') and 'disjoint' in self.expl_type):
-            input_shape = (self.obs_shape[0] + self.intr_reward_coef_embd.shape[1],)
+            if obs_shape_is_dict:
+                input_shape = {k: v for k, v in self.obs_shape.items()}
+                input_shape['proprio'] = (proprio_dim + self.intr_reward_coef_embd.shape[1],)
+            else:
+                input_shape = (proprio_dim + self.intr_reward_coef_embd.shape[1],)
         else:
             input_shape = self.obs_shape
         build_config = {
@@ -29,10 +35,10 @@ class A2CAgent(a2c_common.ContinuousA2CBase):
             'normalize_input': self.normalize_input,
             'type' : 'simple' if 'learn_param' not in self.expl_type else 'extra_param',
         }
-        
+
         if self.expl_type.startswith('mixed_expl'):
             build_config['coef_ids'] = self.intr_reward_coef_embd[::self.intr_coef_block_size,0]
-            build_config['coef_id_idx'] = self.obs_shape[0]
+            build_config['coef_id_idx'] = proprio_dim
         
         self.model = self.network.build(build_config)
         self.model.to(self.ppo_device)
@@ -148,7 +154,8 @@ class A2CAgent(a2c_common.ContinuousA2CBase):
             if self.expl_type.startswith('mixed_expl') and self.config.get('expl_reward_type') == 'entropy':
                 ec_candidates = self.intr_reward_coef[::self.intr_coef_block_size]
                 ec_identifiers = self.intr_reward_coef_embd[::self.intr_coef_block_size, 0].reshape(-1,1)
-                ec_indices = torch.argmax((obs_batch[:,-self.intr_reward_coef_embd.shape[1]] == ec_identifiers).float(), dim=0)
+                obs_flat = obs_batch['proprio'] if isinstance(obs_batch, dict) else obs_batch
+                ec_indices = torch.argmax((obs_flat[:,-self.intr_reward_coef_embd.shape[1]] == ec_identifiers).float(), dim=0)
                 entropy_coef = ec_candidates[ec_indices]
             elif self.expl_type.startswith('simple') and self.config.get('expl_reward_type') == 'entropy':
                 entropy_coef = self.intr_reward_coef
@@ -216,7 +223,8 @@ class A2CAgent(a2c_common.ContinuousA2CBase):
             }     
         if self.expl_type.startswith('mixed_expl'):
             bl_ids = self.intr_reward_coef_embd[::self.intr_coef_block_size, 0].reshape(-1,1)
-            bl_idxs = torch.argmax((obs_batch[:,-self.intr_reward_coef_embd.shape[1]] == bl_ids).float(), dim=0)
+            obs_flat = obs_batch['proprio'] if isinstance(obs_batch, dict) else obs_batch
+            bl_idxs = torch.argmax((obs_flat[:,-self.intr_reward_coef_embd.shape[1]] == bl_ids).float(), dim=0)
             extras["entropies"] = [torch.nan_to_num(entropy[bl_idxs == i].detach().mean()).item() for i in range(self.num_actors // self.intr_coef_block_size)]
         self.train_result = (a_loss, c_loss, torch_ext.apply_masks([entropy.unsqueeze(1)], rnn_masks)[0][0], \
             kl_dist, self.last_lr, lr_mul, \

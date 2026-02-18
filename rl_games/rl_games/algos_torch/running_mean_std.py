@@ -102,5 +102,10 @@ class RunningMeanStdObs(nn.Module):
         })
     
     def forward(self, input, denorm=False):
-        res = {k : self.running_mean_std[k](v, denorm) for k,v in input.items()}
+        res = {}
+        for k, v in input.items():
+            if k in self.running_mean_std:
+                res[k] = self.running_mean_std[k](v, denorm)
+            else:
+                res[k] = v
         return res

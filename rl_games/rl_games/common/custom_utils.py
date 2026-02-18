@@ -7,6 +7,8 @@ def swap_and_flatten01(arr):
     """
     if arr is None:
         return arr
+    if isinstance(arr, dict):
+        return {k: swap_and_flatten01(v) for k, v in arr.items()}
     s = arr.size()
     return arr.transpose(0, 1).reshape(s[0] * s[1], *s[2:])
 
@@ -35,7 +37,11 @@ def shuffle_batch(batch_dict, horizon_length):
         elif key in ['played_frames', 'step_time']:
             continue
         else:
-            batch_dict[key] = batch_dict[key][flattened_indices]
+            v = batch_dict[key]
+            if isinstance(v, dict):
+                batch_dict[key] = {k: val[flattened_indices] for k, val in v.items()}
+            else:
+                batch_dict[key] = v[flattened_indices]
     return batch_dict
 
 def create_sinusoidal_encoding(arr, dim, n=10):
@@ -55,6 +61,8 @@ def filter_leader(val, orig_len, repeat_idxs, num_blocks):
     Filters data corresponding to leader i.e. evaluation policy
     Used with mixed_expl
     """
+    if isinstance(val, dict):
+        return {k: filter_leader(v, orig_len, repeat_idxs, num_blocks) for k, v in val.items()}
     if len(val) > 1:
         bsize = orig_len // num_blocks
         filtered_val = []

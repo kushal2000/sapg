@@ -207,8 +207,36 @@ class A2CBuilder(NetworkBuilder):
                 param_size = kwargs.pop('param_size', 32)
                 self.pid_idx = kwargs['coef_id_idx']
                 self.extra_params = nn.Parameter(torch.randn((len(self.param_ids), param_size), dtype=torch.float32, requires_grad=True), requires_grad=True)
-                assert len(input_shape) == 1
-                input_shape = (self.pid_idx + param_size,)
+                assert isinstance(input_shape, dict) or len(input_shape) == 1
+                if not isinstance(input_shape, dict):
+                    input_shape = (self.pid_idx + param_size,)
+
+            # Depth CNN encoder for dict observations
+            self.has_depth_cnn = isinstance(input_shape, dict) and 'depth_image' in input_shape
+            if self.has_depth_cnn:
+                self.proprio_shape = input_shape['proprio']
+                self.depth_shape = input_shape['depth_image']
+                depth_cnn_config = self.space_config.get('depth_cnn', {}) if self.has_space and self.is_continuous else {}
+                proj_dim = depth_cnn_config.get('proj_dim', 64)
+                channels = depth_cnn_config.get('channels', [32, 64, 64])
+                kernel_sizes = depth_cnn_config.get('kernel_sizes', [8, 4, 3])
+                strides = depth_cnn_config.get('strides', [4, 2, 1])
+                cnn_activation = depth_cnn_config.get('activation', 'relu')
+
+                cnn_layers = []
+                in_ch = self.depth_shape[0]  # 1 for single-channel depth
+                for out_ch, ks, st in zip(channels, kernel_sizes, strides):
+                    cnn_layers.append(nn.Conv2d(in_ch, out_ch, ks, st))
+                    cnn_layers.append(self.activations_factory.create(cnn_activation))
+                    in_ch = out_ch
+                self.depth_cnn = nn.Sequential(*cnn_layers)
+                # Compute CNN output size dynamically
+                with torch.no_grad():
+                    dummy = torch.zeros(1, *self.depth_shape)
+                    cnn_out_size = self.depth_cnn(dummy).flatten(1).shape[1]
+                self.depth_projection = nn.Linear(cnn_out_size, proj_dim)
+                # Flatten input_shape for downstream MLP/LSTM
+                input_shape = (self.proprio_shape[0] + proj_dim,)
 
             if self.has_cnn:
                 if self.permute_input:
@@ -316,6 +344,14 @@ class A2CBuilder(NetworkBuilder):
 
         def forward(self, obs_dict):
             obs = obs_dict['obs']
+            # Process dict observations: extract depth through CNN, concat with proprio
+            if self.has_depth_cnn and isinstance(obs, dict):
+                proprio = obs['proprio']
+                depth = obs['depth_image']
+                depth_features = self.depth_cnn(depth).flatten(1)
+                depth_embed = self.depth_projection(depth_features)
+                obs = torch.cat([proprio, depth_embed], dim=-1)
+                obs_dict['obs'] = obs  # update so downstream coef_cond sigma can index into flat tensor
             if self.net_type == 'extra_param':
                 idxs = (obs[:,self.pid_idx].reshape(-1,1) == self.param_ids).float().argmax(dim=1)
                 obs = torch.cat([obs[:, :self.pid_idx], self.extra_params[idxs]], dim=1)

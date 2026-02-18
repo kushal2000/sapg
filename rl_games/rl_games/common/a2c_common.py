@@ -591,25 +591,32 @@ class A2CBase(BaseAlgorithm):
             rewards, dones, infos = torch.from_numpy(rewards).to(self.ppo_device).float(), torch.from_numpy(dones).to(self.ppo_device), infos
         
         if self.intr_reward_model is not None:
+            intr_obs = obs['obs']['proprio'] if isinstance(obs['obs'], dict) else obs['obs']
             with torch.no_grad():
-                intr_rewards = self.intr_reward_model({"obs" : obs['obs'], "ids" : self.intr_reward_coef_embd[:,0] if self.intr_reward_coef_embd is not None else None}).unsqueeze(-1)
+                intr_rewards = self.intr_reward_model({"obs" : intr_obs, "ids" : self.intr_reward_coef_embd[:,0] if self.intr_reward_coef_embd is not None else None}).unsqueeze(-1)
             with torch.enable_grad():
-                intr_rew_loss = self.intr_reward_model.update({"obs" : obs['obs'], "ids" : self.intr_reward_coef_embd[:,0]  if self.intr_reward_coef_embd is not None else None})
+                intr_rew_loss = self.intr_reward_model.update({"obs" : intr_obs, "ids" : self.intr_reward_coef_embd[:,0]  if self.intr_reward_coef_embd is not None else None})
         else:
             intr_rewards = torch.zeros_like(rewards)
-        
+
         tr_obs = self.obs_to_tensors(obs)
         if self.intr_reward_coef_embd is not None:
-            tr_obs['obs'] = torch.cat([tr_obs['obs'], self.intr_reward_coef_embd], dim=1)
+            if isinstance(tr_obs['obs'], dict):
+                tr_obs['obs']['proprio'] = torch.cat([tr_obs['obs']['proprio'], self.intr_reward_coef_embd], dim=1)
+            else:
+                tr_obs['obs'] = torch.cat([tr_obs['obs'], self.intr_reward_coef_embd], dim=1)
             tr_obs['states'] = torch.cat([tr_obs['states'], self.intr_reward_coef_embd], dim=1)
-        
+
         return tr_obs, rewards, intr_rewards, dones, infos
 
     def env_reset(self):
         obs = self.vec_env.reset()
         obs = self.obs_to_tensors(obs)
         if self.intr_reward_coef_embd is not None:
-            obs['obs'] = torch.cat([obs['obs'], self.intr_reward_coef_embd], dim=1)
+            if isinstance(obs['obs'], dict):
+                obs['obs']['proprio'] = torch.cat([obs['obs']['proprio'], self.intr_reward_coef_embd], dim=1)
+            else:
+                obs['obs'] = torch.cat([obs['obs'], self.intr_reward_coef_embd], dim=1)
             obs['states'] = torch.cat([obs['states'], self.intr_reward_coef_embd], dim=1)
         return obs
 
@@ -988,13 +995,22 @@ class A2CBase(BaseAlgorithm):
                 new_batch_dict[key] = val
             elif key == 'obses':
                 intr_coef_embd = torch.cat([torch.roll(self.intr_reward_coef_embd, self.intr_coef_block_size*i, dims=0) for i in repeat_idxs], dim=0)
-                obses = torch.cat([val]*len(repeat_idxs), dim=0)
-                obses[:, -self.intr_reward_coef_embd.shape[-1]:] = intr_coef_embd.repeat_interleave(self.horizon_length, dim=0)
-                mask = torch.zeros(len(obses), dtype=torch.bool, device=obses.device)
-                mask[len(val):] = True
-                if self.use_others_experience == 'lf': # leader follower type update
-                    obses = filter_leader(obses, len(val), repeat_idxs, num_blocks)
-                    mask = filter_leader(mask, len(val), repeat_idxs, num_blocks)
+                if isinstance(val, dict):
+                    obses = {k: torch.cat([v]*len(repeat_idxs), dim=0) for k, v in val.items()}
+                    obses['proprio'][:, -self.intr_reward_coef_embd.shape[-1]:] = intr_coef_embd.repeat_interleave(self.horizon_length, dim=0)
+                    mask = torch.zeros(len(obses['proprio']), dtype=torch.bool, device=obses['proprio'].device)
+                    mask[len(val['proprio']):] = True
+                    if self.use_others_experience == 'lf':
+                        obses = filter_leader(obses, len(val['proprio']), repeat_idxs, num_blocks)
+                        mask = filter_leader(mask, len(val['proprio']), repeat_idxs, num_blocks)
+                else:
+                    obses = torch.cat([val]*len(repeat_idxs), dim=0)
+                    obses[:, -self.intr_reward_coef_embd.shape[-1]:] = intr_coef_embd.repeat_interleave(self.horizon_length, dim=0)
+                    mask = torch.zeros(len(obses), dtype=torch.bool, device=obses.device)
+                    mask[len(val):] = True
+                    if self.use_others_experience == 'lf':
+                        obses = filter_leader(obses, len(val), repeat_idxs, num_blocks)
+                        mask = filter_leader(mask, len(val), repeat_idxs, num_blocks)
                 new_batch_dict[key] = obses
                 new_batch_dict['off_policy_mask'] = mask
             elif key == 'states':
@@ -1014,9 +1030,14 @@ class A2CBase(BaseAlgorithm):
                 else:
                     new_batch_dict[key] = None
             else:
-                new_batch_dict[key] = torch.cat([val]*len(repeat_idxs), dim=0)
-                if self.use_others_experience == 'lf': # leader follower type update
-                    new_batch_dict[key] = filter_leader(new_batch_dict[key], len(val), repeat_idxs, num_blocks)
+                if isinstance(val, dict):
+                    new_batch_dict[key] = {k: torch.cat([v]*len(repeat_idxs), dim=0) for k, v in val.items()}
+                    if self.use_others_experience == 'lf':
+                        new_batch_dict[key] = filter_leader(new_batch_dict[key], len(next(iter(val.values()))), repeat_idxs, num_blocks)
+                else:
+                    new_batch_dict[key] = torch.cat([val]*len(repeat_idxs), dim=0)
+                    if self.use_others_experience == 'lf':
+                        new_batch_dict[key] = filter_leader(new_batch_dict[key], len(val), repeat_idxs, num_blocks)
 
         new_returns_list = [batch_dict['returns']]
         new_values_list = [batch_dict['values']]
@@ -1029,24 +1050,40 @@ class A2CBase(BaseAlgorithm):
             mb_states = extras['states']
             mb_rnn_states = extras['rnn_states']
             
-            mb_obs[:,:, -self.intr_reward_coef_embd.shape[-1]:] = torch.roll(self.intr_reward_coef_embd, self.intr_coef_block_size*r_k, dims=0)
-            last_obs_and_states['obs'][:,-self.intr_reward_coef_embd.shape[-1]:] = torch.roll(self.intr_reward_coef_embd, self.intr_coef_block_size*r_k, dims=0)
-            
+            rolled_embd = torch.roll(self.intr_reward_coef_embd, self.intr_coef_block_size*r_k, dims=0)
+            if isinstance(mb_obs, dict):
+                mb_obs['proprio'][:,:, -self.intr_reward_coef_embd.shape[-1]:] = rolled_embd
+            else:
+                mb_obs[:,:, -self.intr_reward_coef_embd.shape[-1]:] = rolled_embd
+            if isinstance(last_obs_and_states['obs'], dict):
+                last_obs_and_states['obs']['proprio'][:,-self.intr_reward_coef_embd.shape[-1]:] = rolled_embd
+            else:
+                last_obs_and_states['obs'][:,-self.intr_reward_coef_embd.shape[-1]:] = rolled_embd
+
             flattened_rnn_states = [rnn_s.transpose(0, 1).reshape(rnn_s.transpose(0, 1).shape[0], -1, *rnn_s.shape[3:]) for rnn_s in mb_rnn_states] if mb_rnn_states is not None else None
 
-            flattened_mb_obs = mb_obs.reshape(-1, *mb_obs.shape[2:])
+            if isinstance(mb_obs, dict):
+                flattened_mb_obs = {k: v.reshape(-1, *v.shape[2:]) for k, v in mb_obs.items()}
+            else:
+                flattened_mb_obs = mb_obs.reshape(-1, *mb_obs.shape[2:])
             flattened_mb_states = mb_states.reshape(-1, *mb_states.shape[2:]) if mb_states is not None else None
             
             mb_values = []
-            for i in range((flattened_mb_obs.shape[0] + 8191) // 8192):
+            n_flat = next(iter(flattened_mb_obs.values())).shape[0] if isinstance(flattened_mb_obs, dict) else flattened_mb_obs.shape[0]
+            for i in range((n_flat + 8191) // 8192):
+                if isinstance(flattened_mb_obs, dict):
+                    obs_chunk = {k: v[i*8192:(i+1)*8192] for k, v in flattened_mb_obs.items()}
+                else:
+                    obs_chunk = flattened_mb_obs[i*8192:(i+1)*8192]
                 mb_values.append(self.get_values({
-                    'obs': flattened_mb_obs[i*8192:(i+1)*8192], 
+                    'obs': obs_chunk,
                     'states': flattened_mb_states[i*8192:(i+1)*8192] if mb_states is not None else None
                     }, rnn_states=[s[:, i*8192:(i+1)*8192] for s in flattened_rnn_states] if flattened_rnn_states is not None else None))
             mb_values = torch.cat(mb_values, dim=0)
             last_values = self.get_values(last_obs_and_states, last_rnn_states)
-            
-            mb_values = mb_values.reshape(*mb_obs.shape[:2], *mb_values.shape[1:])
+
+            mb_obs_shape_01 = next(iter(mb_obs.values())).shape[:2] if isinstance(mb_obs, dict) else mb_obs.shape[:2]
+            mb_values = mb_values.reshape(*mb_obs_shape_01, *mb_values.shape[1:])
             mb_values = torch.cat([mb_values, last_values.unsqueeze(0)], dim=0)
 
             mb_fdones = extras['dones']
@@ -1065,8 +1102,14 @@ class A2CBase(BaseAlgorithm):
             new_batch_dict['values'] = filter_leader(new_batch_dict['values'], len(batch_dict['values']), repeat_idxs, num_blocks)
         
         # reset obs and last obs in extras
-        extras['obs'][:,:, -self.intr_reward_coef_embd.shape[-1]:] = self.intr_reward_coef_embd
-        extras['last_obs']['obs'][:,-self.intr_reward_coef_embd.shape[-1]:] = self.intr_reward_coef_embd
+        if isinstance(extras['obs'], dict):
+            extras['obs']['proprio'][:,:, -self.intr_reward_coef_embd.shape[-1]:] = self.intr_reward_coef_embd
+        else:
+            extras['obs'][:,:, -self.intr_reward_coef_embd.shape[-1]:] = self.intr_reward_coef_embd
+        if isinstance(extras['last_obs']['obs'], dict):
+            extras['last_obs']['obs']['proprio'][:,-self.intr_reward_coef_embd.shape[-1]:] = self.intr_reward_coef_embd
+        else:
+            extras['last_obs']['obs'][:,-self.intr_reward_coef_embd.shape[-1]:] = self.intr_reward_coef_embd
 
         return new_batch_dict
 

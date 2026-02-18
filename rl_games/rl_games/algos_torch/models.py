@@ -29,7 +29,7 @@ class BaseModel():
         normalize_input = config.get('normalize_input', False)
         value_size = config.get('value_size', 1)
         extra_info_start_idx = config.get('coef_id_idx', None)
-        assert not 'coef_id_idx' in config or len(obs_shape) == 1
+        assert not 'coef_id_idx' in config or isinstance(obs_shape, dict) or len(obs_shape) == 1
         return self.Network(self.network_builder.build(self.model_class, **config), obs_shape=obs_shape,
             normalize_value=normalize_value, normalize_input=normalize_input, value_size=value_size, extra_info_start_idx=extra_info_start_idx)
 
@@ -46,16 +46,36 @@ class BaseModelNetwork(nn.Module):
             self.value_mean_std = RunningMeanStd((self.value_size,)) #   GeneralizedMovingStats((self.value_size,)) #   
         if normalize_input:
             if isinstance(obs_shape, dict):
-                self.running_mean_std = RunningMeanStdObs(obs_shape)
+                # Only normalize proprio via RunningMeanStd; depth_image uses fixed normalization
+                rms_shape = {k: v for k, v in obs_shape.items() if k != 'depth_image'}
+                if extra_info_start_idx is not None and 'proprio' in rms_shape:
+                    rms_shape['proprio'] = (extra_info_start_idx,)
+                self.running_mean_std = RunningMeanStdObs(rms_shape)
             else:
                 self.running_mean_std = RunningMeanStd((extra_info_start_idx,) if extra_info_start_idx is not None else obs_shape)
 
     def norm_obs(self, observation):
         with torch.no_grad():
-            if self.normalize_input:
-                return torch.cat([self.running_mean_std(observation[:,:self.extra_info_start_idx]), observation[:,self.extra_info_start_idx:]], dim=1) if self.extra_info_start_idx is not None else self.running_mean_std(observation)
+            if isinstance(observation, dict):
+                result = {}
+                if self.normalize_input:
+                    proprio = observation['proprio']
+                    if self.extra_info_start_idx is not None:
+                        normed = self.running_mean_std({'proprio': proprio[:, :self.extra_info_start_idx]})
+                        result['proprio'] = torch.cat([normed['proprio'], proprio[:, self.extra_info_start_idx:]], dim=1)
+                    else:
+                        normed = self.running_mean_std({'proprio': proprio})
+                        result['proprio'] = normed['proprio']
+                else:
+                    result['proprio'] = observation['proprio']
+                if 'depth_image' in observation:
+                    result['depth_image'] = observation['depth_image'] / 10.0
+                return result
             else:
-                return observation
+                if self.normalize_input:
+                    return torch.cat([self.running_mean_std(observation[:,:self.extra_info_start_idx]), observation[:,self.extra_info_start_idx:]], dim=1) if self.extra_info_start_idx is not None else self.running_mean_std(observation)
+                else:
+                    return observation
 
     def denorm_value(self, value):
         with torch.no_grad():
